@@ -42,7 +42,7 @@ export function AdminDashboard() {
 
   // Login-Funktion
   const handleLogin = () => {
-    if (password === 'admin123') { // In production würde man ein sicheres Hash-System verwenden
+    if (password === 'admin') { // In production würde man ein sicheres Hash-System verwenden
       setIsAuthenticated(true)
       toast.success('Erfolgreich angemeldet')
     } else {
