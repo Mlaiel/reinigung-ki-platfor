@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { useKV } from "@github/spark/hooks"
+import { useKV } from "@/hooks/useKV"
 import { 
   MessageCircle, 
   X, 
@@ -138,7 +138,7 @@ export function AIChat() {
                         className="text-xs h-8"
                         onClick={() => {
                           setInput(action)
-                          sendMessage()
+                          setTimeout(() => sendMessage(), 0)
                         }}
                       >
                         {action}
