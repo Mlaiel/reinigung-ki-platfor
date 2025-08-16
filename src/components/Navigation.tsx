@@ -4,11 +4,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Phone, MessageCircle } from "@phosphor-icons/react"
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Quote", href: "#quote" },
-  { name: "Contact", href: "#contact" }
+  { name: "Startseite", href: "#home" },
+  { name: "Leistungen", href: "#services" },
+  { name: "Über uns", href: "#about" },
+  { name: "Kostenvoranschlag", href: "#quote" },
+  { name: "Kontakt", href: "#contact" }
 ]
 
 export function Navigation() {
@@ -44,7 +44,7 @@ export function Navigation() {
             </Button>
             <Button className="gap-2">
               <MessageCircle size={16} />
-              Chat Now
+              Jetzt chatten
             </Button>
           </div>
 
@@ -75,7 +75,7 @@ export function Navigation() {
                     </Button>
                     <Button className="w-full gap-2">
                       <MessageCircle size={16} />
-                      Chat Now
+                      Jetzt chatten
                     </Button>
                   </div>
                 </div>

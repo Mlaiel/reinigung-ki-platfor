@@ -15,47 +15,47 @@ import {
 const serviceCategories = [
   {
     id: "medical",
-    name: "Medical Facilities",
+    name: "Medizinische Einrichtungen",
     icon: Hospital,
-    description: "Specialized cleaning for clinics, hospitals, and medical practices",
-    features: ["OSHA compliant", "Disinfection protocols", "Bio-hazard handling"],
-    basePrice: "€45/hour",
+    description: "Spezialisierte Reinigung für Kliniken, Krankenhäuser und Arztpraxen",
+    features: ["OSHA-konform", "Desinfektionsprotokolle", "Umgang mit Biogefährdung"],
+    basePrice: "€45/Stunde",
     color: "text-blue-600"
   },
   {
     id: "commercial",
-    name: "Office Buildings", 
+    name: "Bürogebäude", 
     icon: Building,
-    description: "Professional office cleaning for businesses of all sizes",
-    features: ["After-hours service", "Daily maintenance", "Deep cleaning"],
-    basePrice: "€25/hour",
+    description: "Professionelle Büroreinigung für Unternehmen jeder Größe",
+    features: ["Service nach Feierabend", "Tägliche Wartung", "Tiefenreinigung"],
+    basePrice: "€25/Stunde",
     color: "text-green-600"
   },
   {
     id: "hospitality",
     name: "Hotels & Restaurants",
     icon: Storefront,
-    description: "High-standard cleaning for hospitality businesses",
-    features: ["24/7 availability", "Guest room turnover", "Kitchen deep clean"],
-    basePrice: "€35/hour", 
+    description: "Hochwertige Reinigung für Gastronomiebetriebe",
+    features: ["24/7 Verfügbarkeit", "Gästezimmer-Turnover", "Küchen-Tiefenreinigung"],
+    basePrice: "€35/Stunde", 
     color: "text-purple-600"
   },
   {
     id: "residential",
-    name: "Residential",
+    name: "Privathaushalte",
     icon: House,
-    description: "Reliable home cleaning services for busy families",
-    features: ["Weekly/monthly plans", "Move-in/out cleaning", "Eco-friendly options"],
-    basePrice: "€20/hour",
+    description: "Zuverlässige Hausreinigung für beschäftigte Familien",
+    features: ["Wöchentliche/monatliche Pläne", "Ein-/Auszugsreinigung", "Umweltfreundliche Optionen"],
+    basePrice: "€20/Stunde",
     color: "text-orange-600"
   }
 ]
 
 const additionalServices = [
-  { name: "Carpet Cleaning", price: "€3-5/m²" },
-  { name: "Window Cleaning", price: "€2-4/m²" },
-  { name: "Deep Kitchen Clean", price: "€150-300" },
-  { name: "Post-Construction", price: "€8-12/m²" }
+  { name: "Teppichreinigung", price: "€3-5/m²" },
+  { name: "Fensterreinigung", price: "€2-4/m²" },
+  { name: "Küchen-Tiefenreinigung", price: "€150-300" },
+  { name: "Baureinigung", price: "€8-12/m²" }
 ]
 
 export function ServicesSection() {
@@ -64,13 +64,13 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <Badge variant="secondary" className="text-sm font-medium">
-            Our Services
+            Unsere Leistungen
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Professional Cleaning for Every Sector
+            Professionelle Reinigung für jeden Bereich
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            AI-powered service estimation with transparent pricing and instant quotes
+            KI-gestützte Serviceschätzung mit transparenten Preisen und sofortigen Angeboten
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export function ServicesSection() {
                     </CardHeader>
                     <CardContent className="space-y-6">
                       <div>
-                        <h4 className="font-semibold mb-3">Included Features:</h4>
+                        <h4 className="font-semibold mb-3">Inkludierte Leistungen:</h4>
                         <div className="space-y-2">
                           {category.features.map((feature, index) => (
                             <div key={index} className="flex items-center gap-2">
@@ -119,17 +119,17 @@ export function ServicesSection() {
                         <div className="text-2xl font-bold text-primary">
                           {category.basePrice}
                         </div>
-                        <Badge variant="outline">Starting price</Badge>
+                        <Badge variant="outline">Grundpreis</Badge>
                       </div>
 
                       <div className="flex gap-3">
                         <Button className="gap-2">
                           <Calculator size={16} />
-                          Get Instant Quote
+                          Sofortiges Angebot erhalten
                         </Button>
                         <Button variant="outline" className="gap-2">
                           <Clock size={16} />
-                          Schedule Consultation
+                          Beratung vereinbaren
                         </Button>
                       </div>
                     </CardContent>
@@ -139,7 +139,7 @@ export function ServicesSection() {
                 <div className="space-y-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle className="text-lg">Additional Services</CardTitle>
+                      <CardTitle className="text-lg">Zusatzleistungen</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-3">
                       {additionalServices.map((service, index) => (
@@ -153,12 +153,12 @@ export function ServicesSection() {
 
                   <Card className="bg-primary text-primary-foreground">
                     <CardContent className="p-6 text-center">
-                      <h4 className="font-semibold mb-2">Need a Custom Quote?</h4>
+                      <h4 className="font-semibold mb-2">Benötigen Sie ein individuelles Angebot?</h4>
                       <p className="text-sm opacity-90 mb-4">
-                        Our AI analyzes your specific needs for accurate pricing
+                        Unsere KI analysiert Ihre spezifischen Bedürfnisse für genaue Preise
                       </p>
                       <Button variant="secondary" size="sm" className="w-full">
-                        Upload Photos for Analysis
+                        Fotos für Analyse hochladen
                       </Button>
                     </CardContent>
                   </Card>

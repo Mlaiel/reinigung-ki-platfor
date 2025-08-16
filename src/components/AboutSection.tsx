@@ -12,51 +12,51 @@ import {
 const values = [
   {
     icon: Award,
-    title: "German Quality Standards",
-    description: "Certified professionals with rigorous training and quality control processes"
+    title: "Deutsche Qualitätsstandards",
+    description: "Zertifizierte Fachkräfte mit rigoroser Ausbildung und Qualitätskontrollprozessen"
   },
   {
     icon: Leaf,
-    title: "Eco-Friendly Solutions", 
-    description: "Environmentally conscious cleaning products and sustainable practices"
+    title: "Umweltfreundliche Lösungen", 
+    description: "Umweltbewusste Reinigungsprodukte und nachhaltige Praktiken"
   },
   {
     icon: Users,
-    title: "Customer-Centric Approach",
-    description: "24/7 AI support with human expertise for personalized service"
+    title: "Kundenorientierter Ansatz",
+    description: "24/7 KI-Support mit menschlicher Expertise für personalisierten Service"
   },
   {
     icon: Target,
-    title: "Precision & Efficiency",
-    description: "AI-powered optimization for consistent, reliable results every time"
+    title: "Präzision & Effizienz",
+    description: "KI-gestützte Optimierung für konsistente, zuverlässige Ergebnisse jedes Mal"
   }
 ]
 
 const stats = [
-  { number: "500+", label: "Satisfied Clients" },
-  { number: "15+", label: "Years Experience" },
-  { number: "99.8%", label: "Service Quality" },
-  { number: "24/7", label: "AI Support" }
+  { number: "500+", label: "Zufriedene Kunden" },
+  { number: "15+", label: "Jahre Erfahrung" },
+  { number: "99,8%", label: "Servicequalität" },
+  { number: "24/7", label: "KI-Support" }
 ]
 
 const team = [
   {
     name: "Klaus Mueller",
-    role: "Founder & CEO",
-    experience: "20+ years in facility management",
-    specialization: "Operations Strategy"
+    role: "Gründer & Geschäftsführer",
+    experience: "20+ Jahre im Facility Management",
+    specialization: "Betriebsstrategie"
   },
   {
     name: "Anna Schmidt",
-    role: "Head of Technology",
-    experience: "AI & automation specialist",
-    specialization: "Product Development"
+    role: "Leiterin Technologie",
+    experience: "KI & Automatisierungsspezialistin",
+    specialization: "Produktentwicklung"
   },
   {
     name: "Thomas Weber",
-    role: "Quality Manager",
-    experience: "German quality certification expert",
-    specialization: "Quality Assurance"
+    role: "Qualitätsmanager",
+    experience: "Experte für deutsche Qualitätszertifizierung",
+    specialization: "Qualitätssicherung"
   }
 ]
 
@@ -66,14 +66,14 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <Badge variant="secondary" className="text-sm font-medium">
-            About Reinigung KI
+            Über Reinigung KI
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            German Precision Meets AI Innovation
+            Deutsche Präzision trifft KI-Innovation
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Leading Cologne's cleaning industry with cutting-edge AI technology and 
-            traditional German quality standards since 2009.
+            Führend in Kölns Reinigungsbranche mit modernster KI-Technologie und 
+            traditionellen deutschen Qualitätsstandards seit 2009.
           </p>
         </div>
 
@@ -113,33 +113,33 @@ export function AboutSection() {
         {/* Company Story */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-foreground">Our Story</h3>
+            <h3 className="text-2xl font-bold text-foreground">Unsere Geschichte</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Founded in 2009 in the heart of Cologne, Reinigung KI began as a traditional 
-                cleaning service with a vision to revolutionize the industry through technology 
-                and unwavering quality standards.
+                Gegründet 2009 im Herzen von Köln, begann Reinigung KI als traditioneller 
+                Reinigungsservice mit der Vision, die Branche durch Technologie 
+                und unerschütterliche Qualitätsstandards zu revolutionieren.
               </p>
               <p>
-                Today, we're Germany's first AI-powered cleaning platform, serving over 500 
-                businesses across medical, hospitality, and commercial sectors. Our proprietary 
-                AI system enables instant quotes, optimized scheduling, and predictive maintenance.
+                Heute sind wir Deutschlands erste KI-gestützte Reinigungsplattform und bedienen über 500 
+                Unternehmen in den Bereichen Medizin, Gastronomie und Gewerbe. Unser proprietäres 
+                KI-System ermöglicht sofortige Angebote, optimierte Terminplanung und vorausschauende Wartung.
               </p>
               <p>
-                We combine the reliability and precision German businesses expect with modern 
-                technology that makes professional cleaning services more accessible and efficient 
-                than ever before.
+                Wir kombinieren die Zuverlässigkeit und Präzision, die deutsche Unternehmen erwarten, mit moderner 
+                Technologie, die professionelle Reinigungsdienste zugänglicher und effizienter 
+                macht als je zuvor.
               </p>
             </div>
             
             <div className="space-y-3">
-              <h4 className="font-semibold">Certifications & Compliance:</h4>
+              <h4 className="font-semibold">Zertifizierungen & Compliance:</h4>
               <div className="space-y-2">
                 {[
-                  "ISO 9001:2015 Quality Management",
-                  "RGPD/GDPR Fully Compliant",
-                  "German Chamber of Commerce Certified",
-                  "OSHA Safety Standards"
+                  "ISO 9001:2015 Qualitätsmanagement",
+                  "DSGVO-vollständig konform",
+                  "IHK-zertifiziert",
+                  "OSHA-Sicherheitsstandards"
                 ].map((cert, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <CheckCircle size={16} className="text-primary" />
@@ -151,7 +151,7 @@ export function AboutSection() {
           </div>
 
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Leadership Team</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Führungsteam</h3>
             <div className="space-y-6">
               {team.map((member, index) => (
                 <Card key={index}>
@@ -181,21 +181,21 @@ export function AboutSection() {
           <CardContent className="p-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Star size={24} />
-              <h3 className="text-2xl font-bold">Awards & Recognition</h3>
+              <h3 className="text-2xl font-bold">Auszeichnungen & Anerkennung</h3>
               <Star size={24} />
             </div>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div>
                 <div className="text-xl font-bold mb-2">2023</div>
-                <div className="text-sm opacity-90">Best Innovation in Cleaning Services - Cologne Business Awards</div>
+                <div className="text-sm opacity-90">Beste Innovation im Reinigungsservice - Kölner Unternehmenspreise</div>
               </div>
               <div>
                 <div className="text-xl font-bold mb-2">2022</div>
-                <div className="text-sm opacity-90">RGPD Excellence Certificate - German Data Protection Authority</div>
+                <div className="text-sm opacity-90">DSGVO-Exzellenz-Zertifikat - Deutsche Datenschutzbehörde</div>
               </div>
               <div>
                 <div className="text-xl font-bold mb-2">2021</div>
-                <div className="text-sm opacity-90">Customer Service Excellence - 99.8% Satisfaction Rating</div>
+                <div className="text-sm opacity-90">Kundenservice-Exzellenz - 99,8% Zufriedenheitsrating</div>
               </div>
             </div>
           </CardContent>

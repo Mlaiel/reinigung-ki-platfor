@@ -9,35 +9,35 @@ import {
 
 const footerLinks = {
   services: [
-    "Medical Facility Cleaning",
-    "Office Building Maintenance", 
-    "Hotel & Restaurant Cleaning",
-    "Residential Services",
-    "Emergency Cleaning",
-    "Post-Construction Cleanup"
+    "Medizinische Einrichtungen",
+    "Bürogebäude-Wartung", 
+    "Hotel & Restaurant Reinigung",
+    "Privathaus-Services",
+    "Notfall-Reinigung",
+    "Baureinigung"
   ],
   company: [
-    "About Us",
-    "Our Team", 
-    "Careers",
-    "Certifications",
-    "Quality Standards",
-    "Sustainability"
+    "Über uns",
+    "Unser Team", 
+    "Karriere",
+    "Zertifizierungen",
+    "Qualitätsstandards",
+    "Nachhaltigkeit"
   ],
   support: [
-    "Contact Support",
-    "AI Chat Assistant",
-    "Request Quote",
-    "Service Areas",
+    "Support kontaktieren",
+    "KI-Chat-Assistent",
+    "Angebot anfordern",
+    "Servicegebiete",
     "FAQ",
-    "Customer Portal"
+    "Kundenportal"
   ],
   legal: [
-    "Privacy Policy",
-    "Terms of Service",
-    "RGPD Compliance",
-    "Cookie Policy",
-    "Data Protection",
+    "Datenschutzrichtlinie",
+    "Nutzungsbedingungen",
+    "DSGVO-Konformität",
+    "Cookie-Richtlinie",
+    "Datenschutz",
     "Impressum"
   ]
 }
@@ -60,9 +60,9 @@ export function Footer() {
               <div>
                 <h3 className="text-2xl font-bold mb-3">Reinigung KI</h3>
                 <p className="text-primary-foreground/80 leading-relaxed">
-                  Germany's leading AI-powered cleaning service platform. Professional, 
-                  reliable, and innovative cleaning solutions for businesses and homes 
-                  across Cologne and surrounding areas.
+                  Deutschlands führende KI-gestützte Reinigungsservice-Plattform. Professionelle, 
+                  zuverlässige und innovative Reinigungslösungen für Unternehmen und Privathaushalte 
+                  in Köln und Umgebung.
                 </p>
               </div>
 
@@ -98,7 +98,7 @@ export function Footer() {
             {/* Links Columns */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 lg:col-span-3 gap-8">
               <div>
-                <h4 className="font-semibold mb-4">Services</h4>
+                <h4 className="font-semibold mb-4">Leistungen</h4>
                 <ul className="space-y-2">
                   {footerLinks.services.map((link) => (
                     <li key={link}>
@@ -114,7 +114,7 @@ export function Footer() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4">Company</h4>
+                <h4 className="font-semibold mb-4">Unternehmen</h4>
                 <ul className="space-y-2">
                   {footerLinks.company.map((link) => (
                     <li key={link}>
@@ -144,7 +144,7 @@ export function Footer() {
                   ))}
                 </ul>
 
-                <h4 className="font-semibold mb-4">Legal</h4>
+                <h4 className="font-semibold mb-4">Rechtliches</h4>
                 <ul className="space-y-2">
                   {footerLinks.legal.map((link) => (
                     <li key={link}>
@@ -166,12 +166,12 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-primary-foreground/80">
-              © 2024 Reinigung KI GmbH. All rights reserved. | Registered in Germany
+              © 2024 Reinigung KI GmbH. Alle Rechte vorbehalten. | Eingetragen in Deutschland
             </div>
             <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
-              <span>🏆 ISO 9001:2015 Certified</span>
-              <span>🔒 RGPD Compliant</span>
-              <span>⭐ 99.8% Customer Satisfaction</span>
+              <span>🏆 ISO 9001:2015 Zertifiziert</span>
+              <span>🔒 DSGVO-konform</span>
+              <span>⭐ 99,8% Kundenzufriedenheit</span>
             </div>
           </div>
         </div>

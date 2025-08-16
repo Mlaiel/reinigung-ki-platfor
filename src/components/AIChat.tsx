@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { useKV } from "@/hooks/useKV"
+import { useKV } from "@github/spark/hooks"
 import { 
   MessageCircle, 
   X, 
@@ -47,19 +47,19 @@ export function AIChat() {
     // Simulate AI response with realistic delay
     await new Promise(resolve => setTimeout(resolve, 1500))
 
-    let aiResponse = "I understand you need cleaning services. "
+    let aiResponse = "Ich verstehe, dass Sie Reinigungsdienste benötigen. "
 
     // Simple keyword-based responses
-    if (userMessage.toLowerCase().includes('quote') || userMessage.toLowerCase().includes('price')) {
-      aiResponse = "I can generate an instant quote for you! Could you tell me: 1) What type of property (office, medical, residential)? 2) Square meters? 3) How often do you need cleaning? I can also analyze photos if you upload them."
-    } else if (userMessage.toLowerCase().includes('medical') || userMessage.toLowerCase().includes('hospital')) {
-      aiResponse = "Perfect! Our medical facility cleaning starts at €45/hour with full OSHA compliance and disinfection protocols. Can you share the square meters and specific requirements? I can provide an instant estimate."
-    } else if (userMessage.toLowerCase().includes('office') || userMessage.toLowerCase().includes('commercial')) {
-      aiResponse = "Great choice! Office cleaning starts at €25/hour. For an accurate quote, I need: building size, number of floors, and frequency (daily, weekly, monthly). Would you like me to calculate this now?"
-    } else if (userMessage.toLowerCase().includes('emergency') || userMessage.toLowerCase().includes('urgent')) {
-      aiResponse = "We offer 24/7 emergency cleaning! I can connect you immediately with our dispatch team. What's the nature of the emergency and location? Emergency response typically arrives within 2 hours."
+    if (userMessage.toLowerCase().includes('angebot') || userMessage.toLowerCase().includes('preis') || userMessage.toLowerCase().includes('kosten')) {
+      aiResponse = "Ich kann sofort ein Angebot für Sie erstellen! Können Sie mir sagen: 1) Welche Art von Objekt (Büro, medizinisch, privat)? 2) Quadratmeter? 3) Wie oft benötigen Sie Reinigung? Ich kann auch Fotos analysieren, wenn Sie welche hochladen."
+    } else if (userMessage.toLowerCase().includes('medizinisch') || userMessage.toLowerCase().includes('krankenhaus') || userMessage.toLowerCase().includes('arzt')) {
+      aiResponse = "Perfekt! Unsere medizinische Einrichtungsreinigung beginnt bei €45/Stunde mit vollständiger OSHA-Konformität und Desinfektionsprotokollen. Können Sie die Quadratmeter und spezifischen Anforderungen mitteilen? Ich kann sofort eine Schätzung erstellen."
+    } else if (userMessage.toLowerCase().includes('büro') || userMessage.toLowerCase().includes('gewerbe') || userMessage.toLowerCase().includes('office')) {
+      aiResponse = "Großartige Wahl! Büroreinigung beginnt bei €25/Stunde. Für ein genaues Angebot benötige ich: Gebäudegröße, Anzahl Etagen und Häufigkeit (täglich, wöchentlich, monatlich). Soll ich das jetzt berechnen?"
+    } else if (userMessage.toLowerCase().includes('notfall') || userMessage.toLowerCase().includes('dringend') || userMessage.toLowerCase().includes('sofort')) {
+      aiResponse = "Wir bieten 24/7 Notfallreinigung! Ich kann Sie sofort mit unserem Einsatzteam verbinden. Was ist die Art des Notfalls und der Standort? Notfallreaktion erfolgt normalerweise innerhalb von 2 Stunden."
     } else {
-      aiResponse = "I'm your AI cleaning assistant! I can help with instant quotes, scheduling, and service information. Try asking about: pricing, medical cleaning, office services, or upload a photo for analysis. How can I help you today?"
+      aiResponse = "Ich bin Ihr KI-Reinigungsassistent! Ich kann bei sofortigen Angeboten, Terminplanung und Service-Informationen helfen. Fragen Sie nach: Preisen, medizinischer Reinigung, Büroservices oder laden Sie ein Foto zur Analyse hoch. Wie kann ich Ihnen heute helfen?"
     }
 
     setIsTyping(false)
@@ -73,10 +73,10 @@ export function AIChat() {
   }
 
   const quickActions = [
-    "Get instant quote",
-    "Upload photos for analysis", 
-    "Schedule consultation",
-    "Emergency service"
+    "Sofortiges Angebot erhalten",
+    "Fotos zur Analyse hochladen", 
+    "Beratung vereinbaren",
+    "Notfall-Service"
   ]
 
   return (
@@ -101,8 +101,8 @@ export function AIChat() {
                 <Sparkle size={16} />
               </div>
               <div>
-                <CardTitle className="text-sm">AI Assistant</CardTitle>
-                <p className="text-xs opacity-80">Instant quotes & support</p>
+                <CardTitle className="text-sm">KI-Assistent</CardTitle>
+                <p className="text-xs opacity-80">Sofortige Angebote & Support</p>
               </div>
             </div>
             <Button
@@ -124,9 +124,9 @@ export function AIChat() {
                     <Sparkle size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm mb-1">AI Cleaning Assistant</h3>
+                    <h3 className="font-semibold text-sm mb-1">KI-Reinigungsassistent</h3>
                     <p className="text-xs text-muted-foreground">
-                      Get instant quotes, upload photos for analysis, or ask any cleaning questions!
+                      Erhalten Sie sofortige Angebote, laden Sie Fotos zur Analyse hoch oder stellen Sie Reinigungsfragen!
                     </p>
                   </div>
                   <div className="grid grid-cols-1 gap-2">
@@ -183,7 +183,7 @@ export function AIChat() {
                       <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
                       <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                     </div>
-                    AI is typing...
+                    KI tippt...
                   </div>
                 </div>
               )}
@@ -196,7 +196,7 @@ export function AIChat() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask about pricing, services, or upload photos..."
+                  placeholder="Fragen Sie nach Preisen, Services oder laden Sie Fotos hoch..."
                   className="flex-1"
                 />
                 <Button 
@@ -210,11 +210,11 @@ export function AIChat() {
               <div className="flex justify-between items-center mt-2">
                 <Button variant="ghost" size="sm" className="text-xs gap-1">
                   <Upload size={12} />
-                  Upload Photo
+                  Foto hochladen
                 </Button>
                 <div className="flex items-center gap-1 text-xs text-muted-foreground">
                   <Clock size={12} />
-                  <span>Avg response: 15s</span>
+                  <span>Ø Antwortzeit: 15s</span>
                 </div>
               </div>
             </div>

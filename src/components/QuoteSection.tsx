@@ -87,13 +87,13 @@ export function QuoteSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
           <Badge variant="secondary" className="text-sm font-medium">
-            Instant Quote
+            Sofortiges Angebot
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Get Your AI-Powered Quote in Minutes
+            Erhalten Sie Ihr KI-gestütztes Angebot in Minuten
           </h2>
           <p className="text-xl text-muted-foreground">
-            Upload photos, describe your needs, and get accurate pricing instantly
+            Fotos hochladen, Bedürfnisse beschreiben und sofort genaue Preise erhalten
           </p>
         </div>
 
@@ -103,38 +103,38 @@ export function QuoteSection() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Calculator className="text-primary" size={20} />
-                Service Details
+                Service-Details
               </CardTitle>
               <CardDescription>
-                Tell us about your cleaning requirements
+                Erzählen Sie uns von Ihren Reinigungsanforderungen
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="property-type">Property Type</Label>
+                  <Label htmlFor="property-type">Objekttyp</Label>
                   <Select 
                     value={quoteData.propertyType} 
                     onValueChange={(value) => setQuoteData(current => ({...current, propertyType: value}))}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select type" />
+                      <SelectValue placeholder="Typ auswählen" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="medical">Medical Facility</SelectItem>
-                      <SelectItem value="commercial">Office Building</SelectItem>
+                      <SelectItem value="medical">Medizinische Einrichtung</SelectItem>
+                      <SelectItem value="commercial">Bürogebäude</SelectItem>
                       <SelectItem value="hospitality">Hotel/Restaurant</SelectItem>
-                      <SelectItem value="residential">Residential</SelectItem>
+                      <SelectItem value="residential">Privathaushalt</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="square-meters">Square Meters</Label>
+                  <Label htmlFor="square-meters">Quadratmeter</Label>
                   <Input
                     id="square-meters"
                     type="number"
-                    placeholder="e.g. 150"
+                    placeholder="z.B. 150"
                     value={quoteData.squareMeters}
                     onChange={(e) => setQuoteData(current => ({...current, squareMeters: e.target.value}))}
                   />
@@ -143,47 +143,47 @@ export function QuoteSection() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="service-type">Service Type</Label>
+                  <Label htmlFor="service-type">Serviceart</Label>
                   <Select 
                     value={quoteData.serviceType}
                     onValueChange={(value) => setQuoteData(current => ({...current, serviceType: value}))}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select service" />
+                      <SelectValue placeholder="Service auswählen" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="standard">Standard Cleaning</SelectItem>
-                      <SelectItem value="deep">Deep Cleaning</SelectItem>
-                      <SelectItem value="move">Move-in/out</SelectItem>
-                      <SelectItem value="post-construction">Post-Construction</SelectItem>
+                      <SelectItem value="standard">Standardreinigung</SelectItem>
+                      <SelectItem value="deep">Tiefenreinigung</SelectItem>
+                      <SelectItem value="move">Ein-/Auszug</SelectItem>
+                      <SelectItem value="post-construction">Baureinigung</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="frequency">Frequency</Label>
+                  <Label htmlFor="frequency">Häufigkeit</Label>
                   <Select 
                     value={quoteData.frequency}
                     onValueChange={(value) => setQuoteData(current => ({...current, frequency: value}))}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="How often?" />
+                      <SelectValue placeholder="Wie oft?" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="one-time">One-time</SelectItem>
-                      <SelectItem value="weekly">Weekly</SelectItem>
-                      <SelectItem value="biweekly">Bi-weekly</SelectItem>
-                      <SelectItem value="monthly">Monthly</SelectItem>
+                      <SelectItem value="one-time">Einmalig</SelectItem>
+                      <SelectItem value="weekly">Wöchentlich</SelectItem>
+                      <SelectItem value="biweekly">Zweiwöchentlich</SelectItem>
+                      <SelectItem value="monthly">Monatlich</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description">Additional Details</Label>
+                <Label htmlFor="description">Zusätzliche Details</Label>
                 <Textarea
                   id="description"
-                  placeholder="Describe any specific requirements, problem areas, or special instructions..."
+                  placeholder="Beschreiben Sie spezielle Anforderungen, Problembereiche oder besondere Anweisungen..."
                   value={quoteData.description}
                   onChange={(e) => setQuoteData(current => ({...current, description: e.target.value}))}
                   rows={3}
@@ -191,11 +191,11 @@ export function QuoteSection() {
               </div>
 
               <div className="space-y-2">
-                <Label>Upload Photos (Optional)</Label>
+                <Label>Fotos hochladen (Optional)</Label>
                 <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
                   <Upload size={32} className="mx-auto text-muted-foreground mb-2" />
                   <p className="text-sm text-muted-foreground mb-2">
-                    Upload photos for more accurate pricing
+                    Fotos für genauere Preisschätzung hochladen
                   </p>
                   <input
                     type="file"
@@ -207,7 +207,7 @@ export function QuoteSection() {
                   />
                   <Button variant="outline" size="sm" asChild>
                     <label htmlFor="photo-upload" className="cursor-pointer">
-                      Choose Files
+                      Dateien auswählen
                     </label>
                   </Button>
                 </div>
@@ -230,12 +230,12 @@ export function QuoteSection() {
                 {isProcessing ? (
                   <>
                     <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
-                    AI Analyzing...
+                    KI analysiert...
                   </>
                 ) : (
                   <>
                     <MessageCircle size={16} />
-                    Generate Quote
+                    Angebot erstellen
                   </>
                 )}
               </Button>
@@ -249,7 +249,7 @@ export function QuoteSection() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <CheckCircle size={20} />
-                    Quote Generated
+                    Angebot erstellt
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -258,20 +258,20 @@ export function QuoteSection() {
                       <Euro size={32} />
                       {estimatedCost}
                     </div>
-                    <p className="text-muted-foreground mt-2">Estimated cost</p>
+                    <p className="text-muted-foreground mt-2">Geschätzte Kosten</p>
                   </div>
 
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>Service type:</span>
+                      <span>Serviceart:</span>
                       <span className="font-medium">{quoteData.serviceType}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Area:</span>
+                      <span>Fläche:</span>
                       <span className="font-medium">{quoteData.squareMeters}m²</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Frequency:</span>
+                      <span>Häufigkeit:</span>
                       <span className="font-medium">{quoteData.frequency}</span>
                     </div>
                   </div>
@@ -279,10 +279,10 @@ export function QuoteSection() {
                   <div className="flex gap-2">
                     <Button className="flex-1 gap-2">
                       <Clock size={16} />
-                      Book Now
+                      Jetzt buchen
                     </Button>
                     <Button variant="outline" className="flex-1">
-                      Modify Quote
+                      Angebot ändern
                     </Button>
                   </div>
                 </CardContent>
@@ -291,9 +291,9 @@ export function QuoteSection() {
               <Card>
                 <CardContent className="p-8 text-center">
                   <MessageCircle size={48} className="mx-auto text-muted-foreground mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">Ready for Your Quote?</h3>
+                  <h3 className="text-lg font-semibold mb-2">Bereit für Ihr Angebot?</h3>
                   <p className="text-muted-foreground">
-                    Fill out the form to get an instant AI-powered estimate
+                    Füllen Sie das Formular aus, um eine sofortige KI-gestützte Schätzung zu erhalten
                   </p>
                 </CardContent>
               </Card>
@@ -301,23 +301,23 @@ export function QuoteSection() {
 
             <Card className="bg-muted">
               <CardContent className="p-6">
-                <h4 className="font-semibold mb-3">Why Choose Our AI Quotes?</h4>
+                <h4 className="font-semibold mb-3">Warum unsere KI-Angebote wählen?</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-primary" />
-                    <span>Instant results in under 2 minutes</span>
+                    <span>Sofortige Ergebnisse in unter 2 Minuten</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-primary" />
-                    <span>Photo analysis for accuracy</span>
+                    <span>Foto-Analyse für Genauigkeit</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-primary" />
-                    <span>No hidden fees or surprises</span>
+                    <span>Keine versteckten Gebühren oder Überraschungen</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-primary" />
-                    <span>Free consultation included</span>
+                    <span>Kostenlose Beratung inklusive</span>
                   </div>
                 </div>
               </CardContent>

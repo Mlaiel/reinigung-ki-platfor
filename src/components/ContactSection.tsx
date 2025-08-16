@@ -62,27 +62,27 @@ export function ContactSection() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Address",
+      title: "Adresse",
       details: ["Hohenzollernring 47", "50672 Köln, Deutschland"],
-      action: "View on Maps"
+      action: "Auf Karte anzeigen"
     },
     {
       icon: Phone,
-      title: "Phone",
-      details: ["+49 221 123 4567", "24/7 Emergency Line"],
-      action: "Call Now"
+      title: "Telefon",
+      details: ["+49 221 123 4567", "24/7 Notfall-Hotline"],
+      action: "Jetzt anrufen"
     },
     {
       icon: Mail,
-      title: "Email", 
-      details: ["info@reinigung-ki.de", "quotes@reinigung-ki.de"],
-      action: "Send Email"
+      title: "E-Mail", 
+      details: ["info@reinigung-ki.de", "angebote@reinigung-ki.de"],
+      action: "E-Mail senden"
     },
     {
       icon: Clock,
-      title: "Business Hours",
-      details: ["Mon-Fri: 7:00 - 19:00", "Weekend: On-demand"],
-      action: "Schedule Call"
+      title: "Geschäftszeiten",
+      details: ["Mo-Fr: 7:00 - 19:00", "Wochenende: Auf Anfrage"],
+      action: "Anruf vereinbaren"
     }
   ]
 
@@ -91,14 +91,14 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <Badge variant="secondary" className="text-sm font-medium">
-            Contact Us
+            Kontakt
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Ready to Get Started?
+            Bereit loszulegen?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Contact our team for immediate assistance or schedule a consultation. 
-            AI-powered quotes available 24/7.
+            Kontaktieren Sie unser Team für sofortige Hilfe oder vereinbaren Sie eine Beratung. 
+            KI-gestützte Angebote 24/7 verfügbar.
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Kontakt aufnehmen</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 {contactInfo.map((info, index) => (
                   <Card key={index}>
@@ -139,13 +139,13 @@ export function ContactSection() {
             <Card className="bg-accent text-accent-foreground">
               <CardContent className="p-6 text-center">
                 <MessageCircle size={32} className="mx-auto mb-4" />
-                <h4 className="text-lg font-semibold mb-2">Instant WhatsApp Support</h4>
+                <h4 className="text-lg font-semibold mb-2">Sofortiger WhatsApp-Support</h4>
                 <p className="text-sm opacity-90 mb-4">
-                  Get immediate responses from our AI assistant via WhatsApp
+                  Erhalten Sie sofortige Antworten von unserem KI-Assistenten über WhatsApp
                 </p>
                 <Button variant="secondary" className="gap-2">
                   <MessageCircle size={16} />
-                  Chat on WhatsApp
+                  Chat auf WhatsApp
                 </Button>
               </CardContent>
             </Card>
@@ -156,7 +156,7 @@ export function ContactSection() {
                 <div className="h-64 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
                   <div className="text-center">
                     <MapPin size={32} className="mx-auto text-primary mb-2" />
-                    <p className="text-sm text-muted-foreground">Interactive Map</p>
+                    <p className="text-sm text-muted-foreground">Interaktive Karte</p>
                     <p className="text-xs text-muted-foreground">Hohenzollernring 47, Köln</p>
                   </div>
                 </div>
@@ -167,9 +167,9 @@ export function ContactSection() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Send us a Message</CardTitle>
+              <CardTitle>Nachricht senden</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you within 2 hours
+                Füllen Sie das Formular aus und wir melden uns innerhalb von 2 Stunden zurück
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -177,41 +177,41 @@ export function ContactSection() {
                 <div className="text-center py-8">
                   <CheckCircle size={48} className="mx-auto text-primary mb-4" />
                   <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Message Sent Successfully!
+                    Nachricht erfolgreich gesendet!
                   </h3>
                   <p className="text-muted-foreground">
-                    Thank you for contacting us. We'll respond within 2 hours.
+                    Vielen Dank für Ihre Kontaktaufnahme. Wir antworten innerhalb von 2 Stunden.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">Vollständiger Name *</Label>
                       <Input
                         id="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData(current => ({...current, name: e.target.value}))}
-                        placeholder="Your full name"
+                        placeholder="Ihr vollständiger Name"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email">E-Mail *</Label>
                       <Input
                         id="email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData(current => ({...current, email: e.target.value}))}
-                        placeholder="your@email.com"
+                        placeholder="ihre@email.de"
                       />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone">Telefonnummer</Label>
                       <Input
                         id="phone"
                         type="tel"
@@ -221,24 +221,24 @@ export function ContactSection() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="service">Service Interested In</Label>
+                      <Label htmlFor="service">Interessierter Service</Label>
                       <Input
                         id="service"
                         value={formData.service}
                         onChange={(e) => setFormData(current => ({...current, service: e.target.value}))}
-                        placeholder="e.g. Office cleaning"
+                        placeholder="z.B. Büroreinigung"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">Nachricht *</Label>
                     <Textarea
                       id="message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData(current => ({...current, message: e.target.value}))}
-                      placeholder="Tell us about your cleaning requirements..."
+                      placeholder="Erzählen Sie uns von Ihren Reinigungsanforderungen..."
                       rows={4}
                     />
                   </div>
@@ -251,18 +251,18 @@ export function ContactSection() {
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
-                        Sending...
+                        Wird gesendet...
                       </>
                     ) : (
                       <>
                         <Send size={16} />
-                        Send Message
+                        Nachricht senden
                       </>
                     )}
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    By submitting this form, you agree to our privacy policy and consent to AI-powered processing of your inquiry.
+                    Durch das Absenden dieses Formulars stimmen Sie unserer Datenschutzrichtlinie zu und willigen in die KI-gestützte Bearbeitung Ihrer Anfrage ein.
                   </p>
                 </form>
               )}
@@ -273,13 +273,13 @@ export function ContactSection() {
         {/* Emergency Contact */}
         <Card className="mt-12 bg-destructive text-destructive-foreground">
           <CardContent className="p-6 text-center">
-            <h3 className="text-lg font-semibold mb-2">Emergency Cleaning Services</h3>
+            <h3 className="text-lg font-semibold mb-2">Notfall-Reinigungsdienste</h3>
             <p className="text-sm opacity-90 mb-4">
-              24/7 emergency response for urgent cleaning situations
+              24/7 Notfallreaktion für dringende Reinigungssituationen
             </p>
             <Button variant="secondary" size="lg" className="gap-2">
               <Phone size={16} />
-              Emergency Hotline: +49 221 EMERGENCY
+              Notfall-Hotline: +49 221 NOTFALL
             </Button>
           </CardContent>
         </Card>
