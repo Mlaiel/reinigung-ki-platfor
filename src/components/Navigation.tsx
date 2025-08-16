@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Phone, MessageCircle } from "@phosphor-icons/react"
+import { navigateTo } from "@/lib/router"
 
 const navItems = [
   { name: "Startseite", href: "#home" },
@@ -20,7 +21,12 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-xl font-bold text-primary">Reinigung KI</span>
+            <a href="/" onClick={(e) => {
+              e.preventDefault()
+              navigateTo('/')
+            }}>
+              <span className="text-xl font-bold text-primary cursor-pointer">Reinigung KI</span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -38,6 +44,14 @@ export function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => navigateTo('/admin')}
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
+              Admin
+            </Button>
             <Button variant="outline" size="sm" className="gap-2">
               <Phone size={16} />
               +49 221 123 4567

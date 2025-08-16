@@ -40,6 +40,11 @@
 
 ## Wesentliche Features
 
+### Admin-Dashboard & Buchungsverwaltung
+- **Funktionalität**: Vollständiges Admin-Dashboard mit Buchungsübersicht, Kundenverwaltung, Statistiken
+- **Zweck**: Zentrale Verwaltung aller Buchungen und Kundendaten mit Echtzeit-Updates
+- **Erfolgskriterien**: Sichere Anmeldung, übersichtliche Buchungsliste, Status-Updates möglich
+
 ### KI-gestützter Kostenvoranschlag
 - **Funktionalität**: Sofortige Preisschätzung basierend auf Objekttyp, Größe, Häufigkeit
 - **Zweck**: Beseitigung von Wartezeiten und manuelle Besichtigungen
