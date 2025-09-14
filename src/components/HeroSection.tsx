@@ -1,229 +1,288 @@
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Chat, Play, Star, Clock, Shield, Trophy } from "@phosphor-icons/react"
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, Chat, Play, Star, Clock, Shield, Trophy } from "@phosphor-icons/react";
 
 export function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Animated Background */}
+      {/* REVOLUTIONARY BACKGROUND - FORMES GÉOMÉTRIQUES */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
-        <div className="absolute top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 -left-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <svg className="w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="hexagons" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <polygon points="10,1 17,5 17,13 10,17 3,13 3,5" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hexagons)" className="text-primary"/>
+          </svg>
+        </div>
+        
+        {/* Floating Geometric Shapes */}
+        <div className="absolute top-10 right-10 w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 transform rotate-45 rounded-2xl animate-pulse"></div>
+        <div className="absolute bottom-16 left-8 w-12 h-12 bg-gradient-to-br from-green-400/20 to-blue-500/20 rounded-full animate-bounce"></div>
+        <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-br from-purple-400/20 to-pink-500/20 transform rotate-12 animate-pulse" style={{clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'}}></div>
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-        {/* MOBILE: Padding top supplémentaire pour le nouveau top bar */}
-        <div className="block md:hidden pt-4"></div>
+      <div className="relative max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 lg:py-20">
+        <div className="block md:hidden pt-1"></div>
         
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <div className="space-y-8 lg:space-y-10 max-w-full">
-            <div className="space-y-4 lg:space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <Badge variant="secondary" className="px-3 py-2 text-xs sm:text-sm font-medium bg-primary/10 text-primary border-primary/20 rounded-full w-fit">
-                  <Star size={12} className="mr-1 sm:mr-2" />
-                  #1 Reinigungsservice in Köln
-                </Badge>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="text-yellow-400 fill-current" />
-                  ))}
-                  <span className="text-xs sm:text-sm text-muted-foreground ml-2">4.9 (500+)</span>
+        <div className="grid lg:grid-cols-2 gap-3 lg:gap-8 items-center">
+          <div className="space-y-2 lg:space-y-5 max-w-full">
+            <div className="space-y-1.5 lg:space-y-3">
+              <div className="flex flex-col gap-1.5">
+                <div className="relative">
+                  <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-1 rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <div className="bg-white rounded-3xl px-3 py-1.5 flex items-center gap-2">
+                      <Star size={12} className="text-yellow-500 fill-current" />
+                      <span className="text-sm font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        #1 Reinigungsservice in Köln
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full px-2 py-1 shadow-xl">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} className="text-white fill-current" />
+                    ))}
+                  </div>
+                  <div className="bg-white rounded-full px-2 py-1 shadow-lg border-2 border-yellow-400">
+                    <span className="text-sm font-bold text-gray-800">4.9 (500+)</span>
+                  </div>
                 </div>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight max-w-full">
-                <span className="block">Professionelle</span>
-                <span className="block bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
-                  KI-Reinigung
-                </span>
-                <span className="block">in Köln</span>
-              </h1>
+              <div className="relative">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.1] tracking-tight max-w-full">
+                  <div className="relative inline-block">
+                    <span className="block text-gray-800">Professionelle</span>
+                    <div className="absolute -top-1 -right-2 w-4 h-4 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full animate-bounce"></div>
+                  </div>
+                  <div className="relative inline-block">
+                    <span className="block bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent">
+                      KI-Reinigung
+                    </span>
+                    <div className="absolute -bottom-1 -left-2 w-3 h-3 bg-gradient-to-br from-green-400 to-blue-500 transform rotate-45"></div>
+                  </div>
+                  <div className="relative inline-block">
+                    <span className="block text-gray-800">in Köln</span>
+                    <div className="absolute -top-1.5 -right-3 w-2 h-2 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full"></div>
+                  </div>
+                </h1>
+              </div>
               
-              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
-                Erhalten Sie sofortige Kostenvoranschläge in{" "}
-                <span className="text-primary font-semibold">unter 60 Sekunden</span> und erleben Sie 
-                Deutschlands fortschrittlichste Reinigungsplattform.
-              </p>
+              <div className="relative">
+                <div className="bg-gradient-to-br from-white/80 to-blue-50/80 backdrop-blur-sm rounded-3xl p-2 lg:p-3 border-2 border-blue-200/50 shadow-xl">
+                  <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-700 leading-relaxed font-medium">
+                    Erhalten Sie sofortige Kostenvoranschläge in{" "}
+                    <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white px-2 py-0.5 rounded-full font-black shadow-lg">
+                      unter 60 Sekunden
+                    </span>{" "}und erleben Sie Deutschlands fortschrittlichste Reinigungsplattform.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Enhanced Features - STYLE CARDS MOBILE APP! */}
-            <div className="space-y-4">
-              {/* MOBILE: Cards style moderne avec toutes les features */}
-              <div className="block sm:hidden space-y-3">
+            <div className="space-y-1.5">
+              <div className="block sm:hidden space-y-1.5">
                 {[
-                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek.", color: "bg-blue-50 border-blue-200" },
-                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%", color: "bg-green-50 border-green-200" },
-                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always", color: "bg-purple-50 border-purple-200" },
-                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium", color: "bg-orange-50 border-orange-200" }
+                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek.", gradient: "from-blue-400 to-cyan-500" },
+                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%", gradient: "from-green-400 to-emerald-500" },
+                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always", gradient: "from-purple-400 to-pink-500" },
+                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium", gradient: "from-orange-400 to-red-500" }
                 ].map((feature, index) => (
-                  <div key={index} className={`flex items-center gap-4 p-4 rounded-2xl border-2 ${feature.color} hover:shadow-lg transition-all duration-300`}>
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
-                      <feature.icon size={24} className="text-primary" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-sm font-semibold text-foreground leading-tight">{feature.text}</div>
-                      <div className="text-xs text-primary font-bold mt-1">{feature.highlight}</div>
+                  <div key={index} className={`bg-gradient-to-r ${feature.gradient} p-1 shadow-2xl rounded-3xl hover:scale-105 transition-all duration-300`}>
+                    <div className="bg-white rounded-3xl p-2 flex items-center gap-2">
+                      <div className={`w-8 h-8 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                        <feature.icon size={16} className="text-white" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs font-bold text-gray-800 leading-tight">{feature.text}</div>
+                        <div className={`text-sm font-black bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                          {feature.highlight}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
               
-              {/* DESKTOP: Grid 2x2 original */}
-              <div className="hidden sm:grid sm:grid-cols-2 gap-4">
+              <div className="hidden sm:grid sm:grid-cols-2 gap-2">
                 {[
-                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek." },
-                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%" },
-                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always" },
-                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium" }
+                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek.", gradient: "from-blue-400 to-cyan-500" },
+                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%", gradient: "from-green-400 to-emerald-500" },
+                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always", gradient: "from-purple-400 to-pink-500" },
+                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium", gradient: "from-orange-400 to-red-500" }
                 ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 rounded-2xl bg-accent/30 border border-accent/50 hover:bg-accent/50 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <feature.icon size={24} className="text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-foreground">{feature.text}</div>
-                      <div className="text-xs text-primary font-bold">{feature.highlight}</div>
+                  <div key={index} className={`bg-gradient-to-br ${feature.gradient} p-1 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300`}>
+                    <div className="bg-white rounded-3xl p-2 flex items-center gap-2 h-full">
+                      <div className={`w-8 h-8 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                        <feature.icon size={16} className="text-white" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-gray-800">{feature.text}</div>
+                        <div className={`text-sm font-black bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                          {feature.highlight}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Enhanced CTA Buttons - NOUVEAU STYLE MOBILE APP! */}
-            <div className="space-y-4 pt-4">
-              {/* MOBILE: Cards style avec bottom margin pour bottom bar */}
-              <div className="block sm:hidden space-y-4 mb-24">
-                <div className="bg-gradient-to-r from-primary to-primary/90 rounded-3xl p-6 shadow-2xl">
-                  <Button size="lg" className="w-full text-lg px-6 py-6 gap-4 rounded-2xl bg-white/20 hover:bg-white/30 text-white border-0 backdrop-blur-sm min-h-[64px]">
-                    <Chat size={24} />
-                    <span className="font-bold">Kostenvoranschlag in 60 Sek.</span>
-                  </Button>
+            <div className="space-y-1.5 pt-1.5">
+              <div className="block sm:hidden space-y-2 mb-6">
+                <div className="relative">
+                  <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-1 rounded-[2rem] shadow-2xl">
+                    <Button size="lg" className="w-full text-base px-4 py-4 gap-2 rounded-[1.8rem] bg-white text-gray-800 border-0 shadow-xl font-black min-h-[40px]">
+                      <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-red-500 rounded-2xl flex items-center justify-center">
+                        <Chat size={14} className="text-white" />
+                      </div>
+                      <span>Kostenvoranschlag in 60 Sek.</span>
+                    </Button>
+                  </div>
                 </div>
-                <div className="bg-gradient-to-r from-accent/20 to-accent/10 rounded-3xl p-6 border-2 border-accent/30">
-                  <Button variant="outline" size="lg" className="w-full text-lg px-6 py-6 gap-4 rounded-2xl border-2 border-primary/30 hover:border-primary/60 bg-background/50 backdrop-blur-sm hover:bg-primary/5 transition-all duration-300 min-h-[64px]">
-                    <Play size={24} />
-                    <span className="font-bold text-primary">Demo ansehen</span>
-                  </Button>
+                
+                <div className="relative">
+                  <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-1 rounded-3xl shadow-xl">
+                    <Button variant="outline" size="lg" className="w-full text-sm px-3 py-3 gap-2 rounded-3xl bg-white border-0 shadow-lg font-bold text-gray-800 min-h-[35px]">
+                      <div className="w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Play size={12} className="text-white" />
+                      </div>
+                      <span>Demo ansehen</span>
+                    </Button>
+                  </div>
                 </div>
               </div>
               
-              {/* DESKTOP: Layout horizontal original avec tous les effets */}
-              <div className="hidden sm:flex gap-4">
-                <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 min-h-[56px]">
-                  <Chat size={24} />
-                  <span className="font-semibold">Kostenvoranschlag in 60 Sek.</span>
-                </Button>
-                <Button variant="outline" size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 min-h-[56px]">
-                  <Play size={24} />
-                  <span className="font-semibold">Demo ansehen</span>
-                </Button>
+              <div className="hidden sm:flex gap-3">
+                <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-1 rounded-3xl shadow-2xl">
+                  <Button size="lg" className="text-base px-6 py-4 gap-3 rounded-3xl bg-white text-gray-800 border-0 shadow-xl font-bold min-h-[48px]">
+                    <Chat size={20} className="text-orange-500" />
+                    <span>Kostenvoranschlag in 60 Sek.</span>
+                  </Button>
+                </div>
+                <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-1 rounded-3xl shadow-xl">
+                  <Button variant="outline" size="lg" className="text-base px-6 py-4 gap-3 rounded-3xl bg-white border-0 shadow-lg font-bold text-gray-800 min-h-[48px]">
+                    <Play size={20} className="text-purple-500" />
+                    <span>Demo ansehen</span>
+                  </Button>
+                </div>
               </div>
             </div>
 
-            {/* Enhanced Trust Indicators - TOUS LES INDICATEURS GARDÉS! */}
-            <div className="pt-8 border-t border-border/50">
-              {/* MOBILE: Grid 2x2 avec TOUS les indicateurs */}
-              <div className="grid grid-cols-2 gap-4 sm:hidden">
-                <div className="text-center group">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
-                  <div className="text-xs text-muted-foreground font-medium leading-tight">Zufriedene Kunden</div>
-                </div>
-                <div className="text-center group">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
-                  <div className="text-xs text-muted-foreground font-medium leading-tight">Jahre Erfahrung</div>
-                </div>
-                <div className="text-center group">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
-                  <div className="text-xs text-muted-foreground font-medium leading-tight">KI-Support</div>
-                </div>
-                <div className="text-center group">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
-                  <div className="text-xs text-muted-foreground font-medium leading-tight">Kundenzufriedenheit</div>
-                </div>
+            <div className="pt-3">
+              <div className="grid grid-cols-2 gap-2 sm:hidden">
+                {[
+                  { value: "500+", label: "Zufriedene Kunden", gradient: "from-blue-400 to-cyan-500" },
+                  { value: "15+", label: "Jahre Erfahrung", gradient: "from-green-400 to-emerald-500" },
+                  { value: "24/7", label: "KI-Support", gradient: "from-purple-400 to-pink-500" },
+                  { value: "99%", label: "Kundenzufriedenheit", gradient: "from-orange-400 to-red-500" }
+                ].map((stat, index) => (
+                  <div key={index} className={`bg-gradient-to-br ${stat.gradient} p-1 shadow-xl rounded-3xl`}>
+                    <div className="bg-white rounded-3xl p-2 text-center h-full flex flex-col justify-center">
+                      <div className={`text-lg font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-0.5`}>
+                        {stat.value}
+                      </div>
+                      <div className="text-xs text-gray-600 font-semibold leading-tight">{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
               
-              {/* DESKTOP: Layout horizontal original avec TOUS les effets */}
-              <div className="hidden sm:flex items-center gap-8">
-                <div className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
-                  <div className="text-sm text-muted-foreground font-medium">Zufriedene Kunden</div>
-                </div>
-                <div className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
-                  <div className="text-sm text-muted-foreground font-medium">Jahre Erfahrung</div>
-                </div>
-                <div className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
-                  <div className="text-sm text-muted-foreground font-medium">KI-Support</div>
-                </div>
-                <div className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
-                  <div className="text-sm text-muted-foreground font-medium">Kundenzufriedenheit</div>
-                </div>
+              <div className="hidden sm:flex items-center gap-4">
+                {[
+                  { value: "500+", label: "Zufriedene Kunden", gradient: "from-blue-400 to-cyan-500" },
+                  { value: "15+", label: "Jahre Erfahrung", gradient: "from-green-400 to-emerald-500" },
+                  { value: "24/7", label: "KI-Support", gradient: "from-purple-400 to-pink-500" },
+                  { value: "99%", label: "Kundenzufriedenheit", gradient: "from-orange-400 to-red-500" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className={`bg-gradient-to-br ${stat.gradient} p-1 rounded-2xl shadow-xl mb-1`}>
+                      <div className="bg-white rounded-2xl px-2 py-1">
+                        <div className={`text-2xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                          {stat.value}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-600 font-semibold">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Enhanced Hero Visual */}
-          <div className="relative lg:pl-8">
-            <div className="relative h-[500px] lg:h-[700px] rounded-3xl overflow-hidden">
-              {/* Main Card */}
-              <div className="absolute inset-0 bg-gradient-to-br from-background to-accent/5 border border-border/50 rounded-3xl backdrop-blur-sm">
-                {/* AI Chat Interface Mockup */}
-                <div className="p-8 h-full flex flex-col">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center">
-                      <Chat size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-foreground">KI-Assistent</div>
-                      <div className="text-sm text-muted-foreground">Online • Antwortet sofort</div>
+          <div className="relative lg:pl-4">
+            <div className="relative h-[200px] lg:h-[350px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-[3rem] shadow-2xl" style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+              }}>
+                <div className="p-4 h-full flex flex-col relative overflow-hidden">
+                  <div className="relative">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-3 shadow-xl border-2 border-white/50">
+                      <div className="flex items-center gap-2">
+                        <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg">
+                          <Chat size={20} className="text-white" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">KI-Assistent</div>
+                          <div className="text-xs text-gray-600 font-semibold">Online • Antwortet sofort</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Chat Messages */}
-                  <div className="flex-1 space-y-4 overflow-hidden">
-                    <div className="bg-accent/30 rounded-2xl p-4 ml-8">
-                      <p className="text-sm text-foreground">Hallo! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen helfen?</p>
+                  <div className="flex-1 space-y-3 overflow-hidden mt-4">
+                    <div className="bg-gradient-to-r from-blue-400 to-purple-500 p-1 rounded-3xl shadow-xl ml-2">
+                      <div className="bg-white rounded-3xl p-2">
+                        <p className="text-xs font-semibold text-gray-800">Hallo! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen helfen?</p>
+                      </div>
                     </div>
                     
-                    <div className="bg-primary rounded-2xl p-4 mr-8 text-white">
-                      <p className="text-sm">Ich brauche eine Büroreinigung für 150m²</p>
+                    <div className="bg-gradient-to-r from-orange-400 to-red-500 p-1 rounded-3xl shadow-xl mr-2">
+                      <div className="bg-white rounded-3xl p-2">
+                        <p className="text-xs font-semibold text-gray-800">Ich brauche eine Büroreinigung für 150m²</p>
+                      </div>
                     </div>
                     
-                    <div className="bg-accent/30 rounded-2xl p-4 ml-8">
-                      <p className="text-sm text-foreground">Perfekt! Basierend auf Ihren Angaben:</p>
-                      <div className="mt-3 p-3 bg-background rounded-xl border border-border/50">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium">Geschätzte Kosten:</span>
-                          <span className="text-lg font-bold text-primary">€127,50</span>
+                    <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-1 rounded-3xl shadow-xl ml-2">
+                      <div className="bg-white rounded-3xl p-2">
+                        <p className="text-xs font-semibold text-gray-800 mb-2">Perfekt! Basierend auf Ihren Angaben:</p>
+                        <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-1 rounded-2xl shadow-lg">
+                          <div className="bg-white rounded-2xl p-2">
+                            <div className="flex justify-between items-center">
+                              <span className="text-xs font-bold text-gray-800">Geschätzte Kosten:</span>
+                              <span className="text-lg font-black bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">€127,50</span>
+                            </div>
+                            <div className="text-xs text-gray-600 font-semibold mt-0.5">Für 150m² Bürofläche</div>
+                          </div>
                         </div>
-                        <div className="text-xs text-muted-foreground mt-1">Für 150m² Bürofläche</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Floating Success Indicators */}
-              <div className="absolute -top-4 -right-4 bg-background rounded-2xl p-4 shadow-2xl border border-border/50 animate-bounce" style={{animationDelay: '2s'}}>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={20} className="text-green-500" />
+              <div className="absolute -top-3 -right-3 bg-gradient-to-br from-green-400 to-emerald-500 p-1 rounded-3xl shadow-2xl">
+                <div className="bg-white rounded-3xl p-2 flex items-center gap-2">
+                  <CheckCircle size={16} className="text-green-500" />
                   <div>
-                    <div className="text-sm font-bold text-foreground">Angebot erstellt</div>
-                    <div className="text-xs text-muted-foreground">in 1,2 Sekunden</div>
+                    <div className="text-xs font-black text-gray-800">Angebot erstellt</div>
+                    <div className="text-xs font-semibold text-gray-600">in 1,2 Sekunden</div>
                   </div>
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-background rounded-2xl p-4 shadow-2xl border border-border/50 animate-bounce" style={{animationDelay: '1s'}}>
-                <div className="flex items-center gap-2">
-                  <Star size={20} className="text-yellow-400 fill-current" />
+              <div className="absolute -bottom-3 -left-3 bg-gradient-to-br from-yellow-400 to-orange-500 p-1 rounded-3xl shadow-2xl">
+                <div className="bg-white rounded-3xl p-2 flex items-center gap-2">
+                  <Star size={16} className="text-yellow-500 fill-current" />
                   <div>
-                    <div className="text-sm font-bold text-foreground">99% Genauigkeit</div>
-                    <div className="text-xs text-muted-foreground">KI-Kostenvoranschlag</div>
+                    <div className="text-xs font-black text-gray-800">99% Genauigkeit</div>
+                    <div className="text-xs font-semibold text-gray-600">KI-Kostenvoranschlag</div>
                   </div>
                 </div>
               </div>
@@ -232,5 +291,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
