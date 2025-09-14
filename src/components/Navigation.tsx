@@ -30,39 +30,40 @@ export function Navigation() {
         ? 'bg-background/98 backdrop-blur-md border-b border-border/50 shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16 md:h-20 gap-2">
           {/* Logo */}
-          <div className="flex items-center group flex-shrink-0">
+          <div className="flex items-center group flex-shrink-0 min-w-0 max-w-[60%] md:max-w-none">
             <a href="/" onClick={(e) => {
               e.preventDefault()
               navigateTo('/')
-            }} className="flex items-center gap-1 sm:gap-2">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-                <Sparkle size={14} className="text-white sm:hidden" />
-                <Sparkle size={16} className="text-white hidden sm:block" />
+            }} className="flex items-center gap-1 sm:gap-2 min-w-0">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200 flex-shrink-0">
+                <Sparkle size={12} className="text-white sm:hidden" />
+                <Sparkle size={14} className="text-white hidden sm:block md:hidden" />
+                <Sparkle size={16} className="text-white hidden md:block" />
               </div>
-              <span className="text-sm sm:text-base lg:text-lg font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent whitespace-nowrap">
+              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] sm:max-w-none">
                 Reinigung KI
               </span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2 flex-1 justify-center">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-all duration-200 font-medium text-sm"
+                className="px-3 lg:px-4 py-2 rounded-full text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-all duration-200 font-medium text-sm whitespace-nowrap"
               >
                 {item.name}
               </a>
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* Desktop CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
             <Button 
               variant="ghost" 
               size="sm" 
@@ -74,7 +75,8 @@ export function Navigation() {
             <Button variant="outline" size="sm" className="gap-2 rounded-full border-border/50 hover:border-primary/50 text-sm">
               <Phone size={16} />
               <span className="hidden xl:inline">+49 221 123 4567</span>
-              <span className="xl:hidden">Anrufen</span>
+              <span className="xl:hidden hidden lg:inline">Anrufen</span>
+              <span className="lg:hidden">Tel</span>
             </Button>
             <Button className="gap-2 rounded-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/25 transition-all duration-200 text-sm">
               <Chat size={16} />
@@ -84,15 +86,14 @@ export function Navigation() {
           </div>
 
           {/* Mobile CTA + Menu */}
-          <div className="flex items-center gap-1 md:hidden flex-shrink-0">
-            <Button size="sm" className="gap-1 rounded-full bg-gradient-to-r from-primary to-primary/90 px-2 py-1 text-xs min-h-[36px] min-w-[36px]">
-              <Chat size={14} />
-              <span className="hidden xs:inline text-xs">Chat</span>
+          <div className="flex items-center gap-1 md:hidden flex-shrink-0 max-w-[35%]">
+            <Button size="sm" className="gap-1 rounded-full bg-gradient-to-r from-primary to-primary/90 px-1 py-1 text-xs min-h-[28px] min-w-[28px] max-w-[32px]">
+              <Chat size={12} />
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="w-9 h-9 rounded-full flex-shrink-0">
-                  <List size={18} />
+                <Button variant="ghost" size="sm" className="w-7 h-7 rounded-full flex-shrink-0">
+                  <List size={14} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[340px] bg-background/98 backdrop-blur-md">
