@@ -30,17 +30,19 @@ export function HeroSection() {
                 </div>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
                 Professionelle
-                <br />
+                <br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>
                 <span className="bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
                   KI-Reinigung
                 </span>
-                <br />
+                <br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>
                 in Köln
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
                 Erhalten Sie sofortige Kostenvoranschläge in{" "}
                 <span className="text-primary font-semibold">unter 60 Sekunden</span> und erleben Sie 
                 Deutschlands fortschrittlichste Reinigungsplattform.
@@ -69,13 +71,15 @@ export function HeroSection() {
 
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="text-lg px-10 py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105">
-                <Chat size={24} />
-                Kostenvoranschlag in 60 Sek.
+              <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 min-h-[56px]">
+                <Chat size={20} className="sm:hidden" />
+                <Chat size={24} className="hidden sm:block" />
+                <span className="font-semibold">Kostenvoranschlag in 60 Sek.</span>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300">
-                <Play size={24} />
-                Demo ansehen
+              <Button variant="outline" size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 min-h-[56px]">
+                <Play size={20} className="sm:hidden" />
+                <Play size={24} className="hidden sm:block" />
+                <span className="font-semibold">Demo ansehen</span>
               </Button>
             </div>
 
