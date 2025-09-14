@@ -86,14 +86,14 @@ export function Navigation() {
           </div>
 
           {/* Mobile CTA + Menu */}
-          <div className="flex items-center gap-1 md:hidden flex-shrink-0 max-w-[35%]">
-            <Button size="sm" className="gap-1 rounded-full bg-gradient-to-r from-primary to-primary/90 px-1 py-1 text-xs min-h-[28px] min-w-[28px] max-w-[32px]">
-              <Chat size={12} />
+          <div className="flex items-center gap-0 md:hidden flex-shrink-0 max-w-[30%]">
+            <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/90 p-0 text-xs h-6 w-6 min-h-[24px] min-w-[24px] max-w-[24px] max-h-[24px]">
+              <Chat size={10} />
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="w-7 h-7 rounded-full flex-shrink-0">
-                  <List size={14} />
+                <Button variant="ghost" size="sm" className="h-6 w-6 rounded-full flex-shrink-0 p-0 min-h-[24px] min-w-[24px] max-w-[24px] max-h-[24px]">
+                  <List size={10} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[340px] bg-background/98 backdrop-blur-md">

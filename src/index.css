@@ -356,33 +356,52 @@
   --radius-full: 9999px;
 }
 
-/* CORRECTIONS MOBILE STRICTES */
+/* CORRECTIONS MOBILE ULTRA-STRICTES */
 @media screen and (max-width: 767px) {
   /* Navigation mobile - Layout strict */
   nav {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
   
   nav div {
-    gap: 2px !important;
+    gap: 0px !important;
   }
   
-  /* Boutons mobile - micro */
-  nav button {
-    min-height: 26px !important;
-    min-width: 26px !important;
-    max-width: 30px !important;
-    padding: 2px !important;
-    font-size: 10px !important;
-  }
-  
-  /* Texte navigation mobile */
+  /* Logo mobile - très limité */
   nav span {
-    font-size: 10px !important;
-    max-width: 80px !important;
+    font-size: 9px !important;
+    max-width: 60px !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+  }
+  
+  /* Conteneur logo mobile */
+  nav div[class*="max-w-[60%]"] {
+    max-width: 65% !important;
+  }
+  
+  /* Conteneur boutons mobile */
+  nav div[class*="max-w-[30%]"] {
+    max-width: 30% !important;
+    justify-content: flex-end !important;
+  }
+  
+  /* Boutons mobile - micro taille */
+  nav button {
+    min-height: 22px !important;
+    min-width: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+    padding: 0px !important;
+    font-size: 8px !important;
+    border-radius: 50% !important;
+  }
+  
+  /* Icônes des boutons mobile */
+  nav button svg {
+    width: 8px !important;
+    height: 8px !important;
   }
   
   /* Débordement global mobile */
