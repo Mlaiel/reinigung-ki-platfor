@@ -37,12 +37,12 @@ export function Navigation() {
         <div className="block md:hidden">
           {/* Navigation principale en une ligne */}
           <div className="flex items-center justify-between h-14 px-4">
-            {/* Groupe gauche: Menu + Logo compact */}
-            <div className="flex items-center gap-2 min-w-0 flex-1">
+            {/* Groupe gauche: Menu + Logo */}
+            <div className="flex items-center gap-3">
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0 flex-shrink-0">
-                    <List size={16} />
+                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                    <List size={18} />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-[280px] bg-background/98 backdrop-blur-md">
@@ -90,28 +90,28 @@ export function Navigation() {
                 </SheetContent>
               </Sheet>
 
-              {/* Logo compact */}
+              {/* Logo */}
               <a href="/" onClick={(e) => {
                 e.preventDefault()
                 navigateTo('/')
-              }} className="flex items-center gap-1 min-w-0 flex-1">
-                <div className="w-6 h-6 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Sparkle size={12} className="text-white" />
+              }} className="flex items-center gap-2">
+                <div className="w-7 h-7 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
+                  <Sparkle size={14} className="text-white" />
                 </div>
-                <span className="text-sm font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent truncate">
+                <span className="text-base font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Reinigung KI
                 </span>
               </a>
             </div>
 
-            {/* Groupe droite: Actions compactes */}
-            <div className="flex items-center gap-1 flex-shrink-0">
-              <Button variant="outline" size="sm" className="h-7 px-2 text-xs">
-                <Phone size={12} />
-                <span className="ml-1 hidden xs:inline">Tel</span>
+            {/* Groupe droite: Actions */}
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm" className="h-8 px-2 text-xs">
+                <Phone size={14} />
+                <span className="ml-1">Tel</span>
               </Button>
-              <Button size="sm" className="h-7 px-2 bg-primary text-primary-foreground text-xs">
-                <Chat size={12} />
+              <Button size="sm" className="h-8 px-3 bg-primary text-primary-foreground text-xs">
+                <Chat size={14} />
                 <span className="ml-1">Chat</span>
               </Button>
             </div>
