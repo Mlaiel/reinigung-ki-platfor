@@ -1,100 +1,165 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, MessageCircle, Play } from "@phosphor-icons/react"
+import { CheckCircle, Chat, Play, Star, Clock, Shield, Trophy } from "@phosphor-icons/react"
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+        <div className="absolute top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 -left-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+      </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <Badge variant="secondary" className="text-sm font-medium">
-                #1 Reinigungsservice in Köln
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Professionelle Reinigung mit
-                <span className="text-primary"> KI-Präzision</span>
+          <div className="space-y-10">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <Badge variant="secondary" className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary border-primary/20 rounded-full">
+                  <Star size={14} className="mr-2" />
+                  #1 Reinigungsservice in Köln
+                </Badge>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                  ))}
+                  <span className="text-sm text-muted-foreground ml-2">4.9 (500+ Bewertungen)</span>
+                </div>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+                Professionelle
+                <br />
+                <span className="bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
+                  KI-Reinigung
+                </span>
+                <br />
+                in Köln
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                Erhalten Sie sofortige Kostenvoranschläge, planen Sie Services und erleben Sie 
-                Deutschlands fortschrittlichste Reinigungsplattform. Wir bedienen medizinische 
-                Einrichtungen, Hotels und Büros in ganz Köln.
+              
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                Erhalten Sie sofortige Kostenvoranschläge in{" "}
+                <span className="text-primary font-semibold">unter 60 Sekunden</span> und erleben Sie 
+                Deutschlands fortschrittlichste Reinigungsplattform.
               </p>
             </div>
 
-            {/* Features */}
-            <div className="space-y-3">
+            {/* Enhanced Features */}
+            <div className="grid sm:grid-cols-2 gap-4">
               {[
-                "Sofortige KI-gestützte Kostenvoranschläge in unter 2 Minuten",
-                "DSGVO-konform mit höchster Sicherheit",
-                "24/7 automatischer Kundenservice",
-                "Professionelle Teams mit deutschen Qualitätsstandards"
+                { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek." },
+                { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%" },
+                { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always" },
+                { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium" }
               ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle size={20} className="text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{feature}</span>
+                <div key={index} className="flex items-center gap-4 p-4 rounded-2xl bg-accent/30 border border-accent/50 hover:bg-accent/50 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <feature.icon size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-foreground">{feature.text}</div>
+                    <div className="text-xs text-primary font-bold">{feature.highlight}</div>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-4 gap-3">
-                <MessageCircle size={20} />
-                Sofortigen Kostenvoranschlag erhalten
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="lg" className="text-lg px-10 py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105">
+                <Chat size={24} />
+                Kostenvoranschlag in 60 Sek.
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 gap-3">
-                <Play size={20} />
+              <Button variant="outline" size="lg" className="text-lg px-10 py-6 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300">
+                <Play size={24} />
                 Demo ansehen
               </Button>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center gap-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Zufriedene Kunden</div>
+            {/* Enhanced Trust Indicators */}
+            <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-border/50">
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
+                <div className="text-sm text-muted-foreground font-medium">Zufriedene Kunden</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">15+</div>
-                <div className="text-sm text-muted-foreground">Jahre Erfahrung</div>
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
+                <div className="text-sm text-muted-foreground font-medium">Jahre Erfahrung</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground">KI-Support</div>
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
+                <div className="text-sm text-muted-foreground font-medium">KI-Support</div>
+              </div>
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
+                <div className="text-sm text-muted-foreground font-medium">Kundenzufriedenheit</div>
               </div>
             </div>
           </div>
 
-          {/* Hero Image/Visual */}
-          <div className="relative">
-            <div className="relative h-[500px] lg:h-[600px] bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl overflow-hidden">
-              {/* Placeholder for hero image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
-                    <MessageCircle size={40} className="text-primary" />
+          {/* Enhanced Hero Visual */}
+          <div className="relative lg:pl-8">
+            <div className="relative h-[500px] lg:h-[700px] rounded-3xl overflow-hidden">
+              {/* Main Card */}
+              <div className="absolute inset-0 bg-gradient-to-br from-background to-accent/5 border border-border/50 rounded-3xl backdrop-blur-sm">
+                {/* AI Chat Interface Mockup */}
+                <div className="p-8 h-full flex flex-col">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center">
+                      <Chat size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold text-foreground">KI-Assistent</div>
+                      <div className="text-sm text-muted-foreground">Online • Antwortet sofort</div>
+                    </div>
                   </div>
-                  <p className="text-lg font-medium text-muted-foreground">
-                    KI-Assistent Demo
-                  </p>
+                  
+                  {/* Chat Messages */}
+                  <div className="flex-1 space-y-4 overflow-hidden">
+                    <div className="bg-accent/30 rounded-2xl p-4 ml-8">
+                      <p className="text-sm text-foreground">Hallo! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen helfen?</p>
+                    </div>
+                    
+                    <div className="bg-primary rounded-2xl p-4 mr-8 text-white">
+                      <p className="text-sm">Ich brauche eine Büroreinigung für 150m²</p>
+                    </div>
+                    
+                    <div className="bg-accent/30 rounded-2xl p-4 ml-8">
+                      <p className="text-sm text-foreground">Perfekt! Basierend auf Ihren Angaben:</p>
+                      <div className="mt-3 p-3 bg-background rounded-xl border border-border/50">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium">Geschätzte Kosten:</span>
+                          <span className="text-lg font-bold text-primary">€127,50</span>
+                        </div>
+                        <div className="text-xs text-muted-foreground mt-1">Für 150m² Bürofläche</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              {/* Floating elements for visual interest */}
-              <div className="absolute top-8 right-8 bg-background rounded-lg p-4 shadow-lg">
-                <div className="text-sm font-medium text-foreground">Angebot erstellt</div>
-                <div className="text-xs text-muted-foreground">in 1,2 Sekunden</div>
+              {/* Floating Success Indicators */}
+              <div className="absolute -top-4 -right-4 bg-background rounded-2xl p-4 shadow-2xl border border-border/50 animate-bounce" style={{animationDelay: '2s'}}>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={20} className="text-green-500" />
+                  <div>
+                    <div className="text-sm font-bold text-foreground">Angebot erstellt</div>
+                    <div className="text-xs text-muted-foreground">in 1,2 Sekunden</div>
+                  </div>
+                </div>
               </div>
               
-              <div className="absolute bottom-8 left-8 bg-background rounded-lg p-4 shadow-lg">
-                <div className="text-sm font-medium text-foreground">€127,50</div>
-                <div className="text-xs text-muted-foreground">geschätzte Kosten</div>
+              <div className="absolute -bottom-4 -left-4 bg-background rounded-2xl p-4 shadow-2xl border border-border/50 animate-bounce" style={{animationDelay: '1s'}}>
+                <div className="flex items-center gap-2">
+                  <Star size={20} className="text-yellow-400 fill-current" />
+                  <div>
+                    <div className="text-sm font-bold text-foreground">99% Genauigkeit</div>
+                    <div className="text-xs text-muted-foreground">KI-Kostenvoranschlag</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

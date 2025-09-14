@@ -1,10 +1,12 @@
 import { 
   MapPin, 
   Phone, 
-  Mail, 
+  Envelope, 
   LinkedinLogo,
   FacebookLogo,
-  InstagramLogo
+  InstagramLogo,
+  Sparkle,
+  ArrowUp
 } from "@phosphor-icons/react"
 
 const footerLinks = {
@@ -49,62 +51,94 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid lg:grid-cols-5 gap-8">
+        <div className="py-20">
+          <div className="grid lg:grid-cols-5 gap-12">
             {/* Company Info */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-3">Reinigung KI</h3>
-                <p className="text-primary-foreground/80 leading-relaxed">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+                    <Sparkle size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold">Reinigung KI</h3>
+                </div>
+                <p className="text-primary-foreground/90 leading-relaxed text-lg">
                   Deutschlands führende KI-gestützte Reinigungsservice-Plattform. Professionelle, 
                   zuverlässige und innovative Reinigungslösungen für Unternehmen und Privathaushalte 
                   in Köln und Umgebung.
                 </p>
               </div>
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <MapPin size={16} className="flex-shrink-0" />
-                  <span className="text-sm">Hohenzollernring 47, 50672 Köln, Deutschland</span>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/10 backdrop-blur-sm">
+                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <div className="font-semibold">Hauptsitz Köln</div>
+                    <div className="text-sm text-primary-foreground/80">Hohenzollernring 47, 50672 Köln</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={16} className="flex-shrink-0" />
-                  <span className="text-sm">+49 221 123 4567</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail size={16} className="flex-shrink-0" />
-                  <span className="text-sm">info@reinigung-ki.de</span>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/10 backdrop-blur-sm">
+                    <Phone size={20} className="flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm">Telefon</div>
+                      <div className="text-sm">+49 221 123 4567</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/10 backdrop-blur-sm">
+                    <Envelope size={20} className="flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm">E-Mail</div>
+                      <div className="text-sm">info@reinigung-ki.de</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                    aria-label={social.name}
-                  >
-                    <social.icon size={20} />
-                  </a>
-                ))}
+              <div>
+                <h4 className="font-semibold mb-4">Folgen Sie uns</h4>
+                <div className="flex gap-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                      aria-label={social.name}
+                    >
+                      <social.icon size={24} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Links Columns */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 lg:col-span-3 gap-8">
               <div>
-                <h4 className="font-semibold mb-4">Leistungen</h4>
-                <ul className="space-y-2">
+                <h4 className="font-bold mb-6 text-lg">Leistungen</h4>
+                <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                        className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 hover:translate-x-1 inline-block"
                       >
                         {link}
                       </a>
@@ -114,13 +148,13 @@ export function Footer() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4">Unternehmen</h4>
-                <ul className="space-y-2">
+                <h4 className="font-bold mb-6 text-lg">Unternehmen</h4>
+                <ul className="space-y-3">
                   {footerLinks.company.map((link) => (
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                        className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 hover:translate-x-1 inline-block"
                       >
                         {link}
                       </a>
@@ -129,34 +163,38 @@ export function Footer() {
                 </ul>
               </div>
 
-              <div>
-                <h4 className="font-semibold mb-4">Support</h4>
-                <ul className="space-y-2 mb-6">
-                  {footerLinks.support.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-8">
+                <div>
+                  <h4 className="font-bold mb-6 text-lg">Support</h4>
+                  <ul className="space-y-3">
+                    {footerLinks.support.map((link) => (
+                      <li key={link}>
+                        <a
+                          href="#"
+                          className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 hover:translate-x-1 inline-block"
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <h4 className="font-semibold mb-4">Rechtliches</h4>
-                <ul className="space-y-2">
-                  {footerLinks.legal.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <h4 className="font-bold mb-6 text-lg">Rechtliches</h4>
+                  <ul className="space-y-3">
+                    {footerLinks.legal.map((link) => (
+                      <li key={link}>
+                        <a
+                          href="#"
+                          className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200 hover:translate-x-1 inline-block"
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -164,15 +202,33 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-primary-foreground/80">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+            <div className="text-primary-foreground/80 text-center lg:text-left">
               © 2024 Reinigung KI GmbH. Alle Rechte vorbehalten. | Eingetragen in Deutschland
             </div>
-            <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
-              <span>🏆 ISO 9001:2015 Zertifiziert</span>
-              <span>🔒 DSGVO-konform</span>
-              <span>⭐ 99,8% Kundenzufriedenheit</span>
+            
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
+                <span>🏆</span>
+                <span>ISO 9001:2015</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
+                <span>🔒</span>
+                <span>DSGVO-konform</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
+                <span>⭐</span>
+                <span>99,8% Zufriedenheit</span>
+              </div>
             </div>
+            
+            <button
+              onClick={scrollToTop}
+              className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110 group"
+              aria-label="Nach oben scrollen"
+            >
+              <ArrowUp size={20} className="group-hover:-translate-y-1 transition-transform duration-200" />
+            </button>
           </div>
         </div>
       </div>
