@@ -13,6 +13,9 @@ export function HeroSection() {
       </div>
       
       <div className="relative max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+        {/* MOBILE: Padding top supplémentaire pour le nouveau top bar */}
+        <div className="block md:hidden pt-4"></div>
+        
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="space-y-8 lg:space-y-10 max-w-full">
@@ -45,23 +48,23 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Enhanced Features - TOUTES LES FEATURES GARDÉES! */}
+            {/* Enhanced Features - STYLE CARDS MOBILE APP! */}
             <div className="space-y-4">
-              {/* MOBILE: Toutes les 4 features en stack vertical compact */}
+              {/* MOBILE: Cards style moderne avec toutes les features */}
               <div className="block sm:hidden space-y-3">
                 {[
-                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek." },
-                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%" },
-                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always" },
-                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium" }
+                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek.", color: "bg-blue-50 border-blue-200" },
+                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%", color: "bg-green-50 border-green-200" },
+                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always", color: "bg-purple-50 border-purple-200" },
+                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium", color: "bg-orange-50 border-orange-200" }
                 ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-accent/30 border border-accent/50 hover:bg-accent/50 transition-all duration-300">
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <feature.icon size={20} className="text-primary" />
+                  <div key={index} className={`flex items-center gap-4 p-4 rounded-2xl border-2 ${feature.color} hover:shadow-lg transition-all duration-300`}>
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+                      <feature.icon size={24} className="text-primary" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="text-sm font-semibold text-foreground leading-tight">{feature.text}</div>
-                      <div className="text-xs text-primary font-bold">{feature.highlight}</div>
+                      <div className="text-xs text-primary font-bold mt-1">{feature.highlight}</div>
                     </div>
                   </div>
                 ))}
@@ -88,18 +91,22 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Enhanced CTA Buttons - TOUS LES BOUTONS GARDÉS! */}
+            {/* Enhanced CTA Buttons - NOUVEAU STYLE MOBILE APP! */}
             <div className="space-y-4 pt-4">
-              {/* MOBILE: Stack vertical MAIS avec tous les boutons */}
-              <div className="block sm:hidden space-y-3">
-                <Button size="lg" className="w-full text-base px-6 py-5 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 min-h-[56px]">
-                  <Chat size={20} />
-                  <span className="font-semibold">Kostenvoranschlag in 60 Sek.</span>
-                </Button>
-                <Button variant="outline" size="lg" className="w-full text-base px-6 py-5 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 min-h-[56px]">
-                  <Play size={20} />
-                  <span className="font-semibold">Demo ansehen</span>
-                </Button>
+              {/* MOBILE: Cards style avec bottom margin pour bottom bar */}
+              <div className="block sm:hidden space-y-4 mb-24">
+                <div className="bg-gradient-to-r from-primary to-primary/90 rounded-3xl p-6 shadow-2xl">
+                  <Button size="lg" className="w-full text-lg px-6 py-6 gap-4 rounded-2xl bg-white/20 hover:bg-white/30 text-white border-0 backdrop-blur-sm min-h-[64px]">
+                    <Chat size={24} />
+                    <span className="font-bold">Kostenvoranschlag in 60 Sek.</span>
+                  </Button>
+                </div>
+                <div className="bg-gradient-to-r from-accent/20 to-accent/10 rounded-3xl p-6 border-2 border-accent/30">
+                  <Button variant="outline" size="lg" className="w-full text-lg px-6 py-6 gap-4 rounded-2xl border-2 border-primary/30 hover:border-primary/60 bg-background/50 backdrop-blur-sm hover:bg-primary/5 transition-all duration-300 min-h-[64px]">
+                    <Play size={24} />
+                    <span className="font-bold text-primary">Demo ansehen</span>
+                  </Button>
+                </div>
               </div>
               
               {/* DESKTOP: Layout horizontal original avec tous les effets */}

@@ -31,54 +31,39 @@ export function Navigation() {
         : 'bg-transparent'
     }`}>
       <div className="w-full">
-        {/* MOBILE DESIGN COMPLET - TOUTES LES FONCTIONS GARDÉES! */}
+        {/* DESIGN MOBILE COMPLÈTEMENT NOUVEAU - STYLE APP MOBILE! */}
         <div className="block md:hidden">
-          {/* Container mobile optimisé - pas de débordement */}
-          <div className="w-full max-w-full overflow-hidden bg-background/95 backdrop-blur-sm border-b border-border/50">
-            
-            {/* LIGNE 1: Logo + Actions principales - Disposées intelligemment */}
-            <div className="flex items-center justify-between p-3 border-b border-border/20">
-              {/* Logo optimisé */}
+          {/* TOP BAR SIMPLE - Juste logo */}
+          <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
+            <div className="flex items-center justify-center py-3">
               <a href="/" onClick={(e) => {
                 e.preventDefault()
                 navigateTo('/')
-              }} className="flex items-center gap-2 flex-shrink-0">
+              }} className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <Sparkle size={16} className="text-white" />
                 </div>
                 <span className="text-lg font-bold text-primary">Reinigung KI</span>
               </a>
-              
-              {/* Actions principales compactes */}
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={() => navigateTo('/admin')}
-                  className="text-xs px-2 py-1 h-8"
-                >
-                  Admin
-                </Button>
-                <Button className="text-xs px-3 py-1 h-8 bg-primary hover:bg-primary/90 text-white rounded-lg">
-                  <Chat size={14} className="mr-1" />
-                  Chat
-                </Button>
-              </div>
             </div>
-            
-            {/* LIGNE 2: Navigation principale - Menu Sheet + Contact rapide */}
-            <div className="flex items-center gap-2 p-3 border-b border-border/20">
-              {/* Menu principal - garde toute la navigation */}
+          </div>
+          
+          {/* PADDING TOP pour compenser la top bar fixe */}
+          <div className="h-16"></div>
+          
+          {/* BOTTOM NAVIGATION - STYLE APP MOBILE */}
+          <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-t border-border/50 shadow-2xl">
+            <div className="grid grid-cols-5 gap-1 p-2">
+              {/* Menu Navigation */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="outline" className="flex-1 h-11 rounded-xl border-2 border-primary/20 hover:border-primary/40">
-                    <List size={18} className="mr-2" />
-                    <span className="font-medium">Navigation & Services</span>
+                  <Button variant="ghost" className="flex flex-col items-center gap-1 h-16 rounded-xl hover:bg-primary/10">
+                    <List size={20} className="text-primary" />
+                    <span className="text-xs font-medium text-primary">Menu</span>
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-[320px] bg-gradient-to-b from-background to-primary/5">
                   <div className="flex flex-col h-full pt-8">
-                    {/* Header Menu avec TOUTES les infos */}
                     <div className="flex items-center gap-3 pb-6 border-b border-primary/20">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center">
                         <Sparkle size={20} className="text-white" />
@@ -89,7 +74,6 @@ export function Navigation() {
                       </div>
                     </div>
                     
-                    {/* TOUTES les pages de navigation */}
                     <div className="flex flex-col space-y-2 py-6 flex-1">
                       {navItems.map((item) => (
                         <a
@@ -104,7 +88,6 @@ export function Navigation() {
                       ))}
                     </div>
                     
-                    {/* TOUTES les actions du menu - rien supprimé */}
                     <div className="space-y-3 pb-6 border-t border-primary/20 pt-6">
                       <Button 
                         variant="outline" 
@@ -131,34 +114,45 @@ export function Navigation() {
                 </SheetContent>
               </Sheet>
 
-              {/* Contact rapide optimisé */}
-              <Button variant="outline" className="h-11 px-3 rounded-xl border-2 border-border/50 hover:border-primary/50 flex-shrink-0">
-                <Phone size={18} />
+              {/* Chat KI - Action principale */}
+              <Button className="flex flex-col items-center gap-1 h-16 rounded-xl bg-primary hover:bg-primary/90 text-white">
+                <Chat size={22} />
+                <span className="text-xs font-semibold">KI Chat</span>
+              </Button>
+
+              {/* Téléphone */}
+              <Button variant="ghost" className="flex flex-col items-center gap-1 h-16 rounded-xl hover:bg-primary/10">
+                <Phone size={20} className="text-primary" />
+                <span className="text-xs font-medium text-primary">Anruf</span>
+              </Button>
+
+              {/* WhatsApp */}
+              <Button variant="ghost" className="flex flex-col items-center gap-1 h-16 rounded-xl hover:bg-green-100">
+                <span className="text-xl">💬</span>
+                <span className="text-xs font-medium text-green-600">WhatsApp</span>
+              </Button>
+
+              {/* E-Mail */}
+              <Button variant="ghost" className="flex flex-col items-center gap-1 h-16 rounded-xl hover:bg-blue-100">
+                <span className="text-xl">�</span>
+                <span className="text-xs font-medium text-blue-600">E-Mail</span>
               </Button>
             </div>
-            
-            {/* LIGNE 3: TOUTES les actions secondaires - Grid adaptatif */}
-            <div className="p-3 bg-muted/20">
-              <div className="grid grid-cols-4 gap-2">
-                <Button variant="ghost" className="h-9 text-xs rounded-lg flex flex-col items-center py-1">
-                  <Chat size={14} />
-                  <span className="text-[10px] mt-1">KI Chat</span>
-                </Button>
-                <Button variant="ghost" className="h-9 text-xs rounded-lg flex flex-col items-center py-1">
-                  <Phone size={14} />
-                  <span className="text-[10px] mt-1">Anruf</span>
-                </Button>
-                <Button variant="ghost" className="h-9 text-xs rounded-lg flex flex-col items-center py-1">
-                  <span className="text-sm">💬</span>
-                  <span className="text-[10px] mt-1">WhatsApp</span>
-                </Button>
-                <Button variant="ghost" className="h-9 text-xs rounded-lg flex flex-col items-center py-1">
-                  <span className="text-sm">📧</span>
-                  <span className="text-[10px] mt-1">E-Mail</span>
-                </Button>
-              </div>
-            </div>
-            
+          </div>
+          
+          {/* PADDING BOTTOM pour compenser la bottom bar fixe */}
+          <div className="h-20"></div>
+          
+          {/* FLOATING ACTION BUTTON - Admin (optionnel) */}
+          <div className="fixed top-20 right-4 z-40">
+            <Button 
+              onClick={() => navigateTo('/admin')}
+              size="sm"
+              variant="outline"
+              className="rounded-full w-12 h-12 shadow-lg bg-background/90 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40"
+            >
+              <span className="text-xs font-bold text-primary">A</span>
+            </Button>
           </div>
         </div>
 
