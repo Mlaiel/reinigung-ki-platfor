@@ -12,34 +12,30 @@ export function HeroSection() {
         <div className="absolute bottom-20 -left-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
-          <div className="space-y-10">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <Badge variant="secondary" className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary border-primary/20 rounded-full">
-                  <Star size={14} className="mr-2" />
+          <div className="space-y-8 lg:space-y-10 max-w-full">
+            <div className="space-y-4 lg:space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <Badge variant="secondary" className="px-3 py-2 text-xs sm:text-sm font-medium bg-primary/10 text-primary border-primary/20 rounded-full w-fit">
+                  <Star size={12} className="mr-1 sm:mr-2" />
                   #1 Reinigungsservice in Köln
                 </Badge>
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                    <Star key={i} size={14} className="text-yellow-400 fill-current" />
                   ))}
-                  <span className="text-sm text-muted-foreground ml-2">4.9 (500+ Bewertungen)</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground ml-2">4.9 (500+)</span>
                 </div>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-                Professionelle
-                <br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>
-                <span className="bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight max-w-full">
+                <span className="block">Professionelle</span>
+                <span className="block bg-gradient-to-r from-primary via-primary/90 to-accent bg-clip-text text-transparent">
                   KI-Reinigung
                 </span>
-                <br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>
-                in Köln
+                <span className="block">in Köln</span>
               </h1>
               
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-light">

@@ -33,16 +33,16 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center group">
+          <div className="flex items-center group flex-shrink-0">
             <a href="/" onClick={(e) => {
               e.preventDefault()
               navigateTo('/')
-            }} className="flex items-center gap-2 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-                <Sparkle size={16} className="text-white sm:hidden" />
-                <Sparkle size={20} className="text-white hidden sm:block" />
+            }} className="flex items-center gap-1 sm:gap-2">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                <Sparkle size={14} className="text-white sm:hidden" />
+                <Sparkle size={16} className="text-white hidden sm:block" />
               </div>
-              <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              <span className="text-sm sm:text-base lg:text-lg font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent whitespace-nowrap">
                 Reinigung KI
               </span>
             </a>
@@ -62,12 +62,12 @@ export function Navigation() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-3">
             <Button 
               variant="ghost" 
               size="sm" 
               onClick={() => navigateTo('/admin')}
-              className="text-sm text-muted-foreground hover:text-foreground rounded-full"
+              className="text-sm text-muted-foreground hover:text-foreground rounded-full hidden lg:flex"
             >
               Admin
             </Button>
@@ -78,20 +78,21 @@ export function Navigation() {
             </Button>
             <Button className="gap-2 rounded-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/25 transition-all duration-200 text-sm">
               <Chat size={16} />
-              Jetzt chatten
+              <span className="hidden lg:inline">Jetzt chatten</span>
+              <span className="lg:hidden">Chat</span>
             </Button>
           </div>
 
           {/* Mobile CTA + Menu */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <Button size="sm" className="gap-2 rounded-full bg-gradient-to-r from-primary to-primary/90 px-3 py-2 text-sm min-h-[40px]">
-              <Chat size={16} />
-              <span className="hidden sm:inline text-xs">Chat</span>
+          <div className="flex items-center gap-1 md:hidden flex-shrink-0">
+            <Button size="sm" className="gap-1 rounded-full bg-gradient-to-r from-primary to-primary/90 px-2 py-1 text-xs min-h-[36px] min-w-[36px]">
+              <Chat size={14} />
+              <span className="hidden xs:inline text-xs">Chat</span>
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="w-10 h-10 rounded-full">
-                  <List size={20} />
+                <Button variant="ghost" size="sm" className="w-9 h-9 rounded-full flex-shrink-0">
+                  <List size={18} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[340px] bg-background/98 backdrop-blur-md">
