@@ -51,7 +51,7 @@ export function Navigation() {
           {/* PADDING TOP pour compenser la top bar fixe */}
           <div className="h-16"></div>
           
-          {/* BOTTOM NAVIGATION - STYLE APP MOBILE */}
+          {/* BOTTOM NAVIGATION - STYLE APP MOBILE RÉVOLUTIONNAIRE! */}
           <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-t border-border/50 shadow-2xl">
             <div className="grid grid-cols-5 gap-1 p-2">
               {/* Menu Navigation */}
