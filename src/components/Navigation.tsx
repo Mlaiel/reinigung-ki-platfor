@@ -30,86 +30,91 @@ export function Navigation() {
         ? 'bg-background/98 backdrop-blur-md border-b border-border/50 shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <div className="w-full px-3 sm:px-4 lg:px-6">
-        {/* NOUVEAU DESIGN MOBILE-FIRST */}
+      <div className="w-full">
+        {/* NAVIGATION MOBILE OPTIMISÉE POUR ZOOM 0.9 */}
         
-        {/* Mobile Layout - DESIGN ULTRA COMPACT */}
-        <div className="flex md:hidden items-center h-14 w-full relative overflow-hidden">
-          {/* Grid layout fixe pour éviter les débordements */}
-          <div className="grid grid-cols-[auto_1fr_auto] items-center w-full gap-2 px-2">
-            
-            {/* Menu Hamburger - Position 1 */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0 rounded-md flex-shrink-0">
-                  <List size={16} />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[280px] bg-background/98 backdrop-blur-md">
-                <div className="flex flex-col h-full pt-6">
-                  {/* Header */}
-                  <div className="flex items-center gap-3 pb-6 border-b border-border/50">
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
-                      <Sparkle size={16} className="text-white" />
+        {/* Mobile Layout - COMPACT ET RESPONSIVE */}
+        <div className="block md:hidden">
+          {/* Navigation principale en une ligne */}
+          <div className="flex items-center justify-between h-14 px-4">
+            {/* Groupe gauche: Menu + Logo */}
+            <div className="flex items-center gap-3">
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                    <List size={18} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-[280px] bg-background/98 backdrop-blur-md">
+                  <div className="flex flex-col h-full pt-6">
+                    {/* Header */}
+                    <div className="flex items-center gap-3 pb-6 border-b border-border/50">
+                      <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
+                        <Sparkle size={16} className="text-white" />
+                      </div>
+                      <span className="text-lg font-bold text-foreground">Reinigung KI</span>
                     </div>
-                    <span className="text-lg font-bold text-foreground">Reinigung KI</span>
-                  </div>
-                  
-                  {/* Navigation */}
-                  <div className="flex flex-col space-y-1 py-6">
-                    {navItems.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="flex items-center px-3 py-3 rounded-lg text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-all duration-200 font-medium"
-                        onClick={() => setIsOpen(false)}
+                    
+                    {/* Navigation */}
+                    <div className="flex flex-col space-y-1 py-6">
+                      {navItems.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center px-3 py-3 rounded-lg text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-all duration-200 font-medium"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                    
+                    {/* Actions */}
+                    <div className="mt-auto space-y-3 pb-6">
+                      <Button variant="outline" className="w-full gap-2 rounded-lg h-12">
+                        <Phone size={18} />
+                        +49 221 123 4567
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        onClick={() => {
+                          setIsOpen(false)
+                          navigateTo('/admin')
+                        }}
+                        className="w-full text-muted-foreground hover:text-foreground rounded-lg h-10"
                       >
-                        {item.name}
-                      </a>
-                    ))}
+                        Admin-Bereich
+                      </Button>
+                    </div>
                   </div>
-                  
-                  {/* Actions */}
-                  <div className="mt-auto space-y-3 pb-6">
-                    <Button variant="outline" className="w-full gap-2 rounded-lg h-12">
-                      <Phone size={18} />
-                      +49 221 123 4567
-                    </Button>
-                    <Button 
-                      variant="ghost" 
-                      onClick={() => {
-                        setIsOpen(false)
-                        navigateTo('/admin')
-                      }}
-                      className="w-full text-muted-foreground hover:text-foreground rounded-lg h-10"
-                    >
-                      Admin-Bereich
-                    </Button>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
 
-            {/* Logo - Position 2 (centre) */}
-            <div className="flex items-center justify-center min-w-0">
+              {/* Logo */}
               <a href="/" onClick={(e) => {
                 e.preventDefault()
                 navigateTo('/')
-              }} className="flex items-center gap-1 max-w-full">
-                <div className="w-6 h-6 bg-gradient-to-br from-primary to-primary/70 rounded-md flex items-center justify-center flex-shrink-0">
-                  <Sparkle size={12} className="text-white" />
+              }} className="flex items-center gap-2">
+                <div className="w-7 h-7 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
+                  <Sparkle size={14} className="text-white" />
                 </div>
-                <span className="text-sm font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent truncate">
+                <span className="text-base font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Reinigung KI
                 </span>
               </a>
             </div>
 
-            {/* Chat Button - Position 3 */}
-            <Button className="h-8 px-2 rounded-md bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary flex-shrink-0 text-xs">
-              <Chat size={14} />
-              <span className="ml-1 hidden xs:inline">Chat</span>
-            </Button>
+            {/* Groupe droite: Actions */}
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm" className="h-8 px-2 text-xs">
+                <Phone size={14} />
+                <span className="ml-1">Tel</span>
+              </Button>
+              <Button size="sm" className="h-8 px-3 bg-primary text-primary-foreground text-xs">
+                <Chat size={14} />
+                <span className="ml-1">Chat</span>
+              </Button>
+            </div>
           </div>
         </div>
 
