@@ -45,57 +45,116 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Enhanced Features */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek." },
-                { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%" },
-                { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always" },
-                { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium" }
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 rounded-2xl bg-accent/30 border border-accent/50 hover:bg-accent/50 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <feature.icon size={24} className="text-primary" />
+            {/* Enhanced Features - MOBILE OPTIMISÉ */}
+            <div className="space-y-3">
+              {/* MOBILE: Stack vertical simple */}
+              <div className="block sm:hidden space-y-3">
+                {[
+                  { icon: Clock, text: "KI-Kostenvoranschläge", highlight: "60 Sek." },
+                  { icon: Shield, text: "DSGVO-konform", highlight: "100%" },
+                  { icon: Chat, text: "24/7 KI-Service", highlight: "Always" },
+                  { icon: Trophy, text: "Deutsche Qualität", highlight: "Premium" }
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-accent/30 border border-accent/50">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <feature.icon size={20} className="text-primary" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-semibold text-foreground truncate">{feature.text}</div>
+                      <div className="text-xs text-primary font-bold">{feature.highlight}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm font-semibold text-foreground">{feature.text}</div>
-                    <div className="text-xs text-primary font-bold">{feature.highlight}</div>
+                ))}
+              </div>
+              
+              {/* DESKTOP: Grid 2x2 original */}
+              <div className="hidden sm:grid sm:grid-cols-2 gap-4">
+                {[
+                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek." },
+                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%" },
+                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always" },
+                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium" }
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-4 p-4 rounded-2xl bg-accent/30 border border-accent/50 hover:bg-accent/50 transition-all duration-300 group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <feature.icon size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-foreground">{feature.text}</div>
+                      <div className="text-xs text-primary font-bold">{feature.highlight}</div>
+                    </div>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Enhanced CTA Buttons - MOBILE OPTIMISÉ */}
+            <div className="space-y-3 pt-4">
+              {/* MOBILE: Stack vertical complet */}
+              <div className="block sm:hidden space-y-3">
+                <Button size="lg" className="w-full text-base px-6 py-5 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 min-h-[56px]">
+                  <Chat size={20} />
+                  <span className="font-semibold">Kostenvoranschlag in 60 Sek.</span>
+                </Button>
+                <Button variant="outline" size="lg" className="w-full text-base px-6 py-5 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 min-h-[56px]">
+                  <Play size={20} />
+                  <span className="font-semibold">Demo ansehen</span>
+                </Button>
+              </div>
+              
+              {/* DESKTOP: Layout horizontal */}
+              <div className="hidden sm:flex gap-4">
+                <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 min-h-[56px]">
+                  <Chat size={24} />
+                  <span className="font-semibold">Kostenvoranschlag in 60 Sek.</span>
+                </Button>
+                <Button variant="outline" size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 min-h-[56px]">
+                  <Play size={24} />
+                  <span className="font-semibold">Demo ansehen</span>
+                </Button>
+              </div>
+            </div>
+
+            {/* Enhanced Trust Indicators - MOBILE OPTIMISÉ */}
+            <div className="pt-8 border-t border-border/50">
+              {/* MOBILE: Grid 2x2 compact */}
+              <div className="grid grid-cols-2 gap-4 sm:hidden">
+                <div className="text-center group">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
+                  <div className="text-xs text-muted-foreground font-medium">Zufriedene Kunden</div>
                 </div>
-              ))}
-            </div>
-
-            {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 min-h-[56px]">
-                <Chat size={20} className="sm:hidden" />
-                <Chat size={24} className="hidden sm:block" />
-                <span className="font-semibold">Kostenvoranschlag in 60 Sek.</span>
-              </Button>
-              <Button variant="outline" size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl border-2 border-border/50 hover:border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 min-h-[56px]">
-                <Play size={20} className="sm:hidden" />
-                <Play size={24} className="hidden sm:block" />
-                <span className="font-semibold">Demo ansehen</span>
-              </Button>
-            </div>
-
-            {/* Enhanced Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-border/50">
-              <div className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
-                <div className="text-sm text-muted-foreground font-medium">Zufriedene Kunden</div>
+                <div className="text-center group">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
+                  <div className="text-xs text-muted-foreground font-medium">Jahre Erfahrung</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
+                  <div className="text-xs text-muted-foreground font-medium">KI-Support</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
+                  <div className="text-xs text-muted-foreground font-medium">Zufriedenheit</div>
+                </div>
               </div>
-              <div className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
-                <div className="text-sm text-muted-foreground font-medium">Jahre Erfahrung</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
-                <div className="text-sm text-muted-foreground font-medium">KI-Support</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
-                <div className="text-sm text-muted-foreground font-medium">Kundenzufriedenheit</div>
+              
+              {/* DESKTOP: Layout horizontal original */}
+              <div className="hidden sm:flex items-center gap-8">
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
+                  <div className="text-sm text-muted-foreground font-medium">Zufriedene Kunden</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
+                  <div className="text-sm text-muted-foreground font-medium">Jahre Erfahrung</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
+                  <div className="text-sm text-muted-foreground font-medium">KI-Support</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
+                  <div className="text-sm text-muted-foreground font-medium">Kundenzufriedenheit</div>
+                </div>
               </div>
             </div>
           </div>
