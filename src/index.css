@@ -204,42 +204,73 @@
     overflow-x: hidden;
   }
   
-  /* Navigation mobile - Protection anti-débordement */
+  /* CORRECTION DRASTIQUE MOBILE - FORCER LA CONTENTION */
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Navigation mobile - Protection totale anti-débordement */
   nav {
     width: 100vw !important;
     max-width: 100vw !important;
     overflow: hidden !important;
+    box-sizing: border-box !important;
   }
   
   nav > div {
     width: 100% !important;
     max-width: 100% !important;
     overflow: hidden !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
   }
   
-  /* Grid mobile strict */
-  nav .grid {
-    width: 100% !important;
-    max-width: 100% !important;
-    grid-template-columns: 40px 1fr 60px !important;
-    gap: 4px !important;
-  }
-  
-  /* Éléments qui ne doivent jamais déborder */
-  nav button,
-  nav a,
-  nav span,
-  nav div {
+  /* Conteneur principal navigation mobile */
+  nav .flex {
     max-width: 100% !important;
     overflow: hidden !important;
+    gap: 4px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
   }
   
-  /* Logo centré avec truncate */
-  nav .truncate {
+  /* Groupe gauche (menu + logo) */
+  nav .flex > div:first-child {
+    max-width: 60% !important;
+    overflow: hidden !important;
+    flex-shrink: 1 !important;
+  }
+  
+  /* Groupe droite (actions) */
+  nav .flex > div:last-child {
+    max-width: 35% !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+    gap: 2px !important;
+  }
+  
+  /* Tous les boutons navigation */
+  nav button {
     max-width: 100% !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
+    flex-shrink: 1 !important;
+  }
+  
+  /* Logo texte */
+  nav span {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Texte des boutons mobiles - plus petit */
+  nav button span {
+    font-size: 10px !important;
   }
   
   button, .btn, [role="button"] {
