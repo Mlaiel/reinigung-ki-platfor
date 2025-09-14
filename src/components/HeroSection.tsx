@@ -45,22 +45,22 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Enhanced Features - MOBILE OPTIMISÉ */}
-            <div className="space-y-3">
-              {/* MOBILE: Stack vertical simple */}
+            {/* Enhanced Features - TOUTES LES FEATURES GARDÉES! */}
+            <div className="space-y-4">
+              {/* MOBILE: Toutes les 4 features en stack vertical compact */}
               <div className="block sm:hidden space-y-3">
                 {[
-                  { icon: Clock, text: "KI-Kostenvoranschläge", highlight: "60 Sek." },
-                  { icon: Shield, text: "DSGVO-konform", highlight: "100%" },
-                  { icon: Chat, text: "24/7 KI-Service", highlight: "Always" },
-                  { icon: Trophy, text: "Deutsche Qualität", highlight: "Premium" }
+                  { icon: Clock, text: "Sofortige KI-Kostenvoranschläge", highlight: "60 Sek." },
+                  { icon: Shield, text: "DSGVO-konform & sicher", highlight: "100%" },
+                  { icon: Chat, text: "24/7 KI-Kundenservice", highlight: "Always" },
+                  { icon: Trophy, text: "Deutsche Qualitätsstandards", highlight: "Premium" }
                 ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-accent/30 border border-accent/50">
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-accent/30 border border-accent/50 hover:bg-accent/50 transition-all duration-300">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <feature.icon size={20} className="text-primary" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="text-sm font-semibold text-foreground truncate">{feature.text}</div>
+                      <div className="text-sm font-semibold text-foreground leading-tight">{feature.text}</div>
                       <div className="text-xs text-primary font-bold">{feature.highlight}</div>
                     </div>
                   </div>
@@ -88,9 +88,9 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Enhanced CTA Buttons - MOBILE OPTIMISÉ */}
-            <div className="space-y-3 pt-4">
-              {/* MOBILE: Stack vertical complet */}
+            {/* Enhanced CTA Buttons - TOUS LES BOUTONS GARDÉS! */}
+            <div className="space-y-4 pt-4">
+              {/* MOBILE: Stack vertical MAIS avec tous les boutons */}
               <div className="block sm:hidden space-y-3">
                 <Button size="lg" className="w-full text-base px-6 py-5 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 min-h-[56px]">
                   <Chat size={20} />
@@ -102,7 +102,7 @@ export function HeroSection() {
                 </Button>
               </div>
               
-              {/* DESKTOP: Layout horizontal */}
+              {/* DESKTOP: Layout horizontal original avec tous les effets */}
               <div className="hidden sm:flex gap-4">
                 <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 gap-3 rounded-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 min-h-[56px]">
                   <Chat size={24} />
@@ -115,29 +115,29 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Enhanced Trust Indicators - MOBILE OPTIMISÉ */}
+            {/* Enhanced Trust Indicators - TOUS LES INDICATEURS GARDÉS! */}
             <div className="pt-8 border-t border-border/50">
-              {/* MOBILE: Grid 2x2 compact */}
+              {/* MOBILE: Grid 2x2 avec TOUS les indicateurs */}
               <div className="grid grid-cols-2 gap-4 sm:hidden">
                 <div className="text-center group">
                   <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
-                  <div className="text-xs text-muted-foreground font-medium">Zufriedene Kunden</div>
+                  <div className="text-xs text-muted-foreground font-medium leading-tight">Zufriedene Kunden</div>
                 </div>
                 <div className="text-center group">
                   <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">15+</div>
-                  <div className="text-xs text-muted-foreground font-medium">Jahre Erfahrung</div>
+                  <div className="text-xs text-muted-foreground font-medium leading-tight">Jahre Erfahrung</div>
                 </div>
                 <div className="text-center group">
                   <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">24/7</div>
-                  <div className="text-xs text-muted-foreground font-medium">KI-Support</div>
+                  <div className="text-xs text-muted-foreground font-medium leading-tight">KI-Support</div>
                 </div>
                 <div className="text-center group">
                   <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">99%</div>
-                  <div className="text-xs text-muted-foreground font-medium">Zufriedenheit</div>
+                  <div className="text-xs text-muted-foreground font-medium leading-tight">Kundenzufriedenheit</div>
                 </div>
               </div>
               
-              {/* DESKTOP: Layout horizontal original */}
+              {/* DESKTOP: Layout horizontal original avec TOUS les effets */}
               <div className="hidden sm:flex items-center gap-8">
                 <div className="text-center group">
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-200">500+</div>
