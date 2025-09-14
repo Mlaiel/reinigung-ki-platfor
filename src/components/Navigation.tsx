@@ -31,84 +31,70 @@ export function Navigation() {
         : 'bg-transparent'
     }`}>
       <div className="w-full">
-        {/* MOBILE DESIGN RÉVOLUTIONNAIRE - Layout Stack Vertical */}
-        
-        <div className="block md:hidden bg-gradient-to-r from-primary/5 to-primary/10 backdrop-blur-sm">
-          {/* Header Mobile avec Logo Central */}
-          <div className="flex flex-col">
-            {/* Ligne 1: Logo et Brand */}
-            <div className="flex items-center justify-center py-3 border-b border-primary/10">
+        {/* MOBILE DESIGN ULTRA-SIMPLE - TOUT VERTICAL! */}
+        <div className="block md:hidden">
+          {/* Layout Vertical Complet - Plus de débordement possible! */}
+          <div className="w-full bg-background/95 backdrop-blur-sm border-b border-border/50">
+            
+            {/* 🎯 ÉTAPE 1: Logo seul, centré, grand */}
+            <div className="w-full py-4 text-center border-b border-border/20">
               <a href="/" onClick={(e) => {
                 e.preventDefault()
                 navigateTo('/')
-              }} className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <Sparkle size={20} className="text-white" />
+              }} className="inline-flex items-center gap-2">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <Sparkle size={16} className="text-white" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-bold text-primary">Reinigung KI</span>
-                  <span className="text-xs text-muted-foreground">Professionelle Reinigung</span>
-                </div>
+                <span className="text-xl font-bold text-primary">Reinigung KI</span>
               </a>
             </div>
             
-            {/* Ligne 2: Actions Principales */}
-            <div className="flex items-center justify-between px-4 py-2 bg-background/50">
-              {/* Menu principal */}
+            {/* 🎯 ÉTAPE 2: Menu Principal - Bouton PLEINE LARGEUR */}
+            <div className="w-full p-3">
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="outline" className="flex-1 mr-2 h-11 rounded-2xl border-2 border-primary/20 hover:border-primary/40 bg-background/80">
-                    <List size={18} className="mr-2" />
-                    <span className="font-medium">Menu</span>
+                  <Button className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold text-base rounded-xl">
+                    <List size={20} className="mr-3" />
+                    Navigation & Services
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-[320px] bg-gradient-to-b from-background to-primary/5">
-                  <div className="flex flex-col h-full pt-8">
-                    {/* Header Menu */}
-                    <div className="flex items-center gap-3 pb-6 border-b border-primary/20">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center">
-                        <Sparkle size={20} className="text-white" />
+                <SheetContent side="left" className="w-[300px]">
+                  <div className="pt-6">
+                    <div className="flex items-center gap-3 pb-6 border-b">
+                      <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <Sparkle size={18} className="text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-foreground">Reinigung KI</h3>
-                        <p className="text-sm text-muted-foreground">Ihr Reinigungsservice</p>
+                        <h3 className="font-bold">Reinigung KI</h3>
+                        <p className="text-sm text-muted-foreground">Professionelle Reinigung</p>
                       </div>
                     </div>
                     
-                    {/* Navigation Links */}
-                    <div className="flex flex-col space-y-2 py-6 flex-1">
-                      {navItems.map((item, index) => (
+                    <div className="py-4 space-y-2">
+                      {navItems.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
-                          className="flex items-center px-4 py-4 rounded-2xl text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300 font-medium text-base border border-transparent hover:border-primary/20"
+                          className="block w-full p-3 rounded-lg hover:bg-muted text-left font-medium"
                           onClick={() => setIsOpen(false)}
                         >
-                          <div className="w-2 h-2 bg-primary/60 rounded-full mr-3"></div>
                           {item.name}
                         </a>
                       ))}
                     </div>
                     
-                    {/* Actions Menu */}
-                    <div className="space-y-3 pb-6 border-t border-primary/20 pt-6">
-                      <Button 
-                        variant="outline" 
-                        className="w-full gap-3 rounded-2xl h-14 text-base border-2 hover:border-primary/40"
-                      >
-                        <Phone size={20} />
-                        <div className="flex flex-col items-start">
-                          <span className="font-semibold">Anrufen</span>
-                          <span className="text-xs text-muted-foreground">+49 221 123 4567</span>
-                        </div>
+                    <div className="border-t pt-4 space-y-3">
+                      <Button variant="outline" className="w-full justify-start gap-2">
+                        <Phone size={18} />
+                        +49 221 123 4567
                       </Button>
                       <Button 
                         onClick={() => {
                           setIsOpen(false)
                           navigateTo('/admin')
                         }}
-                        variant="ghost"
-                        className="w-full text-muted-foreground hover:text-foreground rounded-2xl h-12"
+                        variant="ghost" 
+                        className="w-full"
                       >
                         Admin-Bereich
                       </Button>
@@ -116,29 +102,28 @@ export function Navigation() {
                   </div>
                 </SheetContent>
               </Sheet>
-
-              {/* Chat Action Principal */}
-              <Button className="flex-1 h-11 rounded-2xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-lg text-white font-semibold">
-                <Chat size={18} className="mr-2" />
-                KI Chat
-              </Button>
             </div>
             
-            {/* Ligne 3: Actions Secondaires */}
-            <div className="flex items-center gap-2 px-4 py-2 bg-muted/30">
-              <Button variant="ghost" size="sm" className="flex-1 h-9 rounded-xl text-xs">
-                <Phone size={14} className="mr-1" />
-                Schnell-Anruf
-              </Button>
-              <div className="w-px h-6 bg-border"></div>
-              <Button variant="ghost" size="sm" className="flex-1 h-9 rounded-xl text-xs">
-                💬 WhatsApp
-              </Button>
-              <div className="w-px h-6 bg-border"></div>
-              <Button variant="ghost" size="sm" className="flex-1 h-9 rounded-xl text-xs">
-                📧 E-Mail
-              </Button>
+            {/* 🎯 ÉTAPE 3: Actions Rapides - Grid Simple 2x2 */}
+            <div className="w-full p-3 bg-muted/20 border-t border-border/20">
+              <div className="grid grid-cols-2 gap-2">
+                <Button variant="outline" className="h-10 text-sm rounded-lg">
+                  <Chat size={16} className="mr-2" />
+                  KI Chat
+                </Button>
+                <Button variant="outline" className="h-10 text-sm rounded-lg">
+                  <Phone size={16} className="mr-2" />
+                  Anrufen
+                </Button>
+                <Button variant="ghost" className="h-10 text-sm rounded-lg">
+                  💬 WhatsApp
+                </Button>
+                <Button variant="ghost" className="h-10 text-sm rounded-lg">
+                  📧 E-Mail
+                </Button>
+              </div>
             </div>
+            
           </div>
         </div>
 
